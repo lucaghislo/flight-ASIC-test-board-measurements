@@ -1,0 +1,12 @@
+GRAFICI CORRENTE IMON/IREF
+
+1. Plot della Iref misurata su diversi ASIC vs bit setting (BBB)
+2. Plot dei dati dopo il binning per le due sole configurazioni 101 e 110
+3. Plot della Iref misurata vs bit setting (BBB) ma per le diverse temperature
+4. Plot della Iref normalizzata (al valore a 0 °C) vs Temperatura. Su questo plot metterei 4 curve: misurata, simulata TT, SS e FF
+
+Da quest’ultimo grafico si può ricavare la variazione della corrente nell’intervallo da -40 °C a +30°C espressa in ppm/°C per le 4 curve. I valori potrebbero essere riassunti in una tabella.
+
+1. un plot della corrente Iref simulata e quella misurata normalizzata al valore che la corrente ha alla temperatura di 0 °C
+2. una tabella dove si confronta la variazione espressa in ppm/°C per le 3 simulazioni e misurata
+
