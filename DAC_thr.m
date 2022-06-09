@@ -6,8 +6,12 @@ plots = nan(1, 2);
 % linear regression for each curve
 disp("LINEAR REGRESSION MODEL: y = a + b * x")
 
-for j = -30:10:30
-    DATA = readtable(sprintf('DAC_thr_data/readings_DAC_thr_voltage_%d.txt', j), 'Format','%f %f');
+for j = -40:10:30
+    if(j == -40)
+        DATA = readtable(sprintf('DAC_thr_data/readings_DAC_thr_voltage_%d_3.txt', j), 'Format','%f %f');
+    else
+        DATA = readtable(sprintf('DAC_thr_data/readings_DAC_thr_voltage_%d.txt', j), 'Format','%f %f');
+    end
     
     % set desired precision in terms of the number of decimal places
     n_decimal = 5;
@@ -66,7 +70,7 @@ for j = -30:10:30
 end
 
 box
-legend('T = -30 °C', 'T = -20 °C', 'T = -10 °C', 'T = 0 °C', 'T = 10 °C', 'T = 20 °C', 'T = 30 °C')
+legend('T = -40 °C', 'T = -30 °C', 'T = -20 °C', 'T = -10 °C', 'T = 0 °C', 'T = 10 °C', 'T = 20 °C', 'T = 30 °C')
 savefig('fig/DAC_thr_voltage_TEMP.fig')
 exportgraphics(gcf,'pdf/DAC_thr_voltage_TEMP.pdf','ContentType','vector');
 
@@ -126,7 +130,7 @@ for j = 0:7
     
     hold on
     plots(1, j+1) = plot(thr_mean(:, 1), thr_mean(:, 2)*1000);
-    title('Threshold Voltage vs DAC THR Code')
+    title('Threshold Voltage vs DAC THR Code at -40 °C')
     xlabel("DAC THR code")
     ylabel("THR Voltage [mV]")
     xlim([0, 255])
