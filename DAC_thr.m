@@ -6,7 +6,7 @@ plots = nan(1, 2);
 % linear regression for each curve
 disp("LINEAR REGRESSION MODEL: y = a + b * x")
 
-for j = -20:10:30
+for j = -30:10:30
     DATA = readtable(sprintf('DAC_thr_data/readings_DAC_thr_voltage_%d.txt', j), 'Format','%f %f');
     
     % set desired precision in terms of the number of decimal places
@@ -66,7 +66,7 @@ for j = -20:10:30
 end
 
 box
-legend('T = -20 °C', 'T = -10 °C', 'T = 0 °C', 'T = 10 °C', 'T = 20 °C', 'T = 30 °C')
+legend('T = -30 °C', 'T = -20 °C', 'T = -10 °C', 'T = 0 °C', 'T = 10 °C', 'T = 20 °C', 'T = 30 °C')
 savefig('fig/DAC_thr_voltage_TEMP.fig')
 exportgraphics(gcf,'pdf/DAC_thr_voltage_TEMP.pdf','ContentType','vector');
 
