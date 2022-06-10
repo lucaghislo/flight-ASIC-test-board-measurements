@@ -84,7 +84,7 @@ count = 0;
 % linear regression for each curve
 disp("LINEAR REGRESSION MODEL: y = a + b * x")
 
-for j = -34:2:-30
+for j = -40:2:-30
     count = count + 1;
     if(j == -40)
         DATA = readtable(sprintf('DAC_thr_data/readings_DAC_thr_voltage_%d_3.txt', j), 'Format','%f %f');
@@ -154,7 +154,7 @@ savefig('fig/DAC_thr_voltage_TEMP.fig')
 exportgraphics(gcf,'pdf/DAC_thr_voltage_TEMP.pdf','ContentType','vector');
 
 
-%% DAC threshold voltage analysis [FTHR span @-40°C]
+%% DAC threshold voltage analysis [FTHR span @ -40°C]
 
 clear; clc;
 plots = nan(1, 2);
