@@ -4,7 +4,7 @@ f = figure('visible','off');
 
 clear; clc;
 % test_board_measurements - 2_BGR.csv
-D = readtable('test_board_measurements - 2_BGR_R3-18k.csv', 'VariableNamingRule','preserve'); % measurements data
+D = readtable('BGR_data/test_board_measurements - 2_BGR_R3-18k.csv', 'VariableNamingRule','preserve'); % measurements data
 
 X = [1:1:8];
 BGR_R = 18000; % R = 18kohm
@@ -40,7 +40,7 @@ exportgraphics(gcf,'pdf/BGR_current_XBBB.pdf','ContentType','vector');
 f = figure('visible','off');
 
 clear; clc;
-D = readtable('test_board_measurements - 2_BGR_R3-18k.csv', 'VariableNamingRule','preserve'); % measurements data
+D = readtable('BGR_data/test_board_measurements - 2_BGR_R3-18k.csv', 'VariableNamingRule','preserve'); % measurements data
 SIM = readtable('BGR_data/current_Meas_vs_sim.txt', 'Format','%f %f %f %f %f %f'); % simulations data
 
 SIM_double = table2array(SIM);
@@ -76,7 +76,7 @@ exportgraphics(gcf,'pdf/BGR_current_XBBB_27C_sim.pdf','ContentType','vector');
 f = figure('visible','off');
 
 clear; clc;
-D = readtable('test_board_measurements - 2_BGR_R3-18k.csv', 'VariableNamingRule','preserve');
+D = readtable('BGR_data/test_board_measurements - 2_BGR_R3-18k.csv', 'VariableNamingRule','preserve');
 
 X = [1:1:8];
 BGR_R = 18000; % R = 20kohm
@@ -88,10 +88,10 @@ BGR_current_0C = ((D.("0C")/BGR_R)/BGR_gain)*1000
 BGR_current_m10C = ((D.("-10C")/BGR_R)/BGR_gain)*1000
 BGR_current_m20C = ((D.("-20C")/BGR_R)/BGR_gain)*1000
 BGR_current_m30C = ((D.("-30C")/BGR_R)/BGR_gain)*1000
-%BGR_current_m32C = ((D.("-32C")/BGR_R)/BGR_gain)*1000 % TODO
-%BGR_current_m34C = ((D.("-34C")/BGR_R)/BGR_gain)*1000 % TODO
-%BGR_current_m36C = ((D.("-36C")/BGR_R)/BGR_gain)*1000 % TODO
-%BGR_current_m38C = ((D.("-38C")/BGR_R)/BGR_gain)*1000 % TODO
+BGR_current_m32C = ((D.("-32C")/BGR_R)/BGR_gain)*1000 % TODO
+BGR_current_m34C = ((D.("-34C")/BGR_R)/BGR_gain)*1000 % TODO
+BGR_current_m36C = ((D.("-36C")/BGR_R)/BGR_gain)*1000 % TODO
+BGR_current_m38C = ((D.("-38C")/BGR_R)/BGR_gain)*1000 % TODO
 BGR_current_m40C = ((D.("-40C")/BGR_R)/BGR_gain)*1000
 
 %BGR_tot = [BGR_current_m40C, BGR_current_m38C,  BGR_current_m36C,  BGR_current_m34C,  BGR_current_m32C, BGR_current_m30C, BGR_current_m20C, BGR_current_m10C, BGR_current_0C, BGR_current_10C, BGR_current_20C, BGR_current_30C];
@@ -137,7 +137,7 @@ end
 f = figure('visible','off');
 
 clear; clc;
-D = readtable('test_board_measurements - 2_BGR.csv', 'VariableNamingRule','preserve');
+D = readtable('BGR_data/test_board_measurements - 2_BGR_R3-18k.csv', 'VariableNamingRule','preserve');
 
 X = [1:1:8];
 BGR_R = 18000; % R = 20kohm
@@ -149,10 +149,10 @@ BGR_current_0C = ((D.("0C")/BGR_R)/BGR_gain)*1000
 BGR_current_m10C = ((D.("-10C")/BGR_R)/BGR_gain)*1000
 BGR_current_m20C = ((D.("-20C")/BGR_R)/BGR_gain)*1000
 BGR_current_m30C = ((D.("-30C")/BGR_R)/BGR_gain)*1000
-%BGR_current_m32C = ((D.("-32C")/BGR_R)/BGR_gain)*1000 % TODO
-%BGR_current_m34C = ((D.("-34C")/BGR_R)/BGR_gain)*1000 % TODO
-%BGR_current_m36C = ((D.("-36C")/BGR_R)/BGR_gain)*1000 % TODO
-%BGR_current_m38C = ((D.("-38C")/BGR_R)/BGR_gain)*1000 % TODO
+BGR_current_m32C = ((D.("-32C")/BGR_R)/BGR_gain)*1000 % TODO
+BGR_current_m34C = ((D.("-34C")/BGR_R)/BGR_gain)*1000 % TODO
+BGR_current_m36C = ((D.("-36C")/BGR_R)/BGR_gain)*1000 % TODO
+BGR_current_m38C = ((D.("-38C")/BGR_R)/BGR_gain)*1000 % TODO
 BGR_current_m40C = ((D.("-40C")/BGR_R)/BGR_gain)*1000
 
 %BGR_tot = [BGR_current_m40C, BGR_current_m38C,  BGR_current_m36C,  BGR_current_m34C,  BGR_current_m32C, BGR_current_m30C, BGR_current_m20C, BGR_current_m10C, BGR_current_0C, BGR_current_10C, BGR_current_20C, BGR_current_30C];
@@ -186,7 +186,7 @@ end
 f = figure('visible','off');
 
 clear; clc;
-D = readtable('test_board_measurements - 2_BGR.csv', 'VariableNamingRule','preserve');
+D = readtable('BGR_data/test_board_measurements - 2_BGR_R3-18k.csv', 'VariableNamingRule','preserve');
 
 X = [1:1:8];
 BGR_R = 18000; % R = 20kohm
@@ -198,10 +198,10 @@ BGR_current_0C = ((D.("0C")/BGR_R)/BGR_gain)*1000
 BGR_current_m10C = ((D.("-10C")/BGR_R)/BGR_gain)*1000
 BGR_current_m20C = ((D.("-20C")/BGR_R)/BGR_gain)*1000
 BGR_current_m30C = ((D.("-30C")/BGR_R)/BGR_gain)*1000
-%BGR_current_m32C = ((D.("-32C")/BGR_R)/BGR_gain)*1000 % TODO
-%BGR_current_m34C = ((D.("-34C")/BGR_R)/BGR_gain)*1000 % TODO
-%BGR_current_m36C = ((D.("-36C")/BGR_R)/BGR_gain)*1000 % TODO
-%BGR_current_m38C = ((D.("-38C")/BGR_R)/BGR_gain)*1000 % TODO
+BGR_current_m32C = ((D.("-32C")/BGR_R)/BGR_gain)*1000 % TODO
+BGR_current_m34C = ((D.("-34C")/BGR_R)/BGR_gain)*1000 % TODO
+BGR_current_m36C = ((D.("-36C")/BGR_R)/BGR_gain)*1000 % TODO
+BGR_current_m38C = ((D.("-38C")/BGR_R)/BGR_gain)*1000 % TODO
 BGR_current_m40C = ((D.("-40C")/BGR_R)/BGR_gain)*1000
 
 %BGR_tot = [BGR_current_m40C,  BGR_current_m38C,  BGR_current_m36C,  BGR_current_m34C,  BGR_current_m32C, BGR_current_m30C, BGR_current_m20C, BGR_current_m10C, BGR_current_0C, BGR_current_10C, BGR_current_20C, BGR_current_30C];
@@ -245,7 +245,7 @@ exportgraphics(gcf,'pdf/BGR_current_Xtemp_all-BBB.pdf','ContentType','vector');
 f = figure('visible','off');
 
 clear; clc;
-D = readtable('test_board_measurements - 2_BGR.csv', 'VariableNamingRule','preserve');
+D = readtable('BGR_data/test_board_measurements - 2_BGR_R3-18k.csv', 'VariableNamingRule','preserve');
 
 X = [1:1:8];
 BGR_R = 18000; % R = 20kohm
@@ -277,7 +277,7 @@ exportgraphics(gcf,'pdf/BGR_current_XBBB_40-30.pdf','ContentType','vector');
 f = figure('visible','off');
 
 clear; clc;
-D = readtable('test_board_measurements - 2_BGR.csv', 'VariableNamingRule','preserve');
+D = readtable('BGR_data/test_board_measurements - 2_BGR_R3-18k.csv', 'VariableNamingRule','preserve');
 
 X = [1:1:8];
 BGR_R = 18000; % R = 20kohm

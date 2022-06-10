@@ -1,7 +1,7 @@
 %% Upload data
 
 clear; clc;
-D = readtable('test_board_measurements - 2_BGR_R3-18k.csv', 'VariableNamingRule','preserve'); % measurements data
+D = readtable('BGR_data/test_board_measurements - 2_BGR_R3-18k.csv', 'VariableNamingRule','preserve'); % measurements data
 SIM_IMON_Iref = readtable('BGR_data/IMON_IREF_vs_T_models.txt', 'Format','%f %f %f %f %f %f %f %f %f %f'); % simulations data
 
 % BIAS	A	00	30	31	32	33	34	35	36	37	38	39
