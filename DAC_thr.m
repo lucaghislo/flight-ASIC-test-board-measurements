@@ -1,4 +1,4 @@
-%% DAC threshold voltage analysis [FTHR span @-40°C]
+%% DAC threshold voltage analysis [FTHR = 011, 10°C/step]
 
 clear; clc;
 plots = nan(1, 2);
@@ -71,6 +71,85 @@ end
 
 box
 legend('T = -40 °C', 'T = -30 °C', 'T = -20 °C', 'T = -10 °C', 'T = 0 °C', 'T = 10 °C', 'T = 20 °C', 'T = 30 °C')
+savefig('fig/DAC_thr_voltage_TEMP.fig')
+exportgraphics(gcf,'pdf/DAC_thr_voltage_TEMP.pdf','ContentType','vector');
+
+
+%% DAC threshold voltage analysis [FTHR = 011, 2°C/step]
+
+clear; clc;
+plots = nan(1, 2)
+count = 0;
+
+% linear regression for each curve
+disp("LINEAR REGRESSION MODEL: y = a + b * x")
+
+for j = -34:2:-30
+    count = count + 1;
+    if(j == -40)
+        DATA = readtable(sprintf('DAC_thr_data/readings_DAC_thr_voltage_%d_3.txt', j), 'Format','%f %f');
+    else
+        DATA = readtable(sprintf('DAC_thr_data/readings_DAC_thr_voltage_%d.txt', j), 'Format','%f %f');
+    end
+    
+    % set desired precision in terms of the number of decimal places
+    n_decimal = 5;
+    % create a new table
+    new_T = varfun(@(x) num2str(x, ['%' sprintf('.%df', n_decimal)]), DATA);
+    % preserve the variable names and the row names in the original table
+    new_T.Properties.VariableNames = DATA.Properties.VariableNames;
+    new_T.Properties.RowNames = DATA.Properties.RowNames;
+    
+    DATA_array = table2array(DATA);
+    DATA_array = round(DATA_array, 5);
+    DAC = [1:255]';
+    dac_count = 1;
+    counter = 0;    
+    
+    thr_mean = nan(255, 2);
+    sum = 0;
+    
+    % calculate mean per THR DAC value
+    for i = 1:length(DATA_array)
+        if(DATA_array(i, 1) == DAC(dac_count))
+            if(counter>1)
+                sum = sum + DATA_array(i, 2);
+            end
+            counter = counter + 1;
+        else
+            thr_mean(DAC(dac_count), 1) = DAC(dac_count);
+            thr_mean(DAC(dac_count), 2) = sum/(counter-2);
+            sum = 0;
+            counter = 1;
+            dac_count = dac_count + 1;
+        end
+    end
+
+    % DAC THR = 255
+    sum = 0;
+    for i = length(DATA_array)-2:length(DATA_array)
+        sum = sum + DATA_array(i, 2);
+    end
+
+    thr_mean(DAC(255), 1) = DAC(255);
+    thr_mean(DAC(255), 2) = sum/3;
+
+    hold on
+    plots(1, count) = plot(thr_mean(:, 1), thr_mean(:, 2)*1000);
+    title('Threshold Voltage vs DAC THR Code')
+    xlabel("DAC THR code")
+    ylabel("THR Voltage [mV]")
+    xlim([0, 255])
+
+    % Fit line to data using polyfit
+    c = polyfit(thr_mean(:, 1),thr_mean(:, 2)*1000,1);
+
+    % Display evaluated equation y = p0 + p1*x
+    disp(['TEMP = ' num2str(j) ' °C, y = ' num2str(c(2)) ' + ' num2str(c(1)) ' * x'])
+end
+
+box
+legend('T = -40 °C', 'T = -38 °C', 'T = -36 °C', 'T = -34 °C', 'T = -32 °C', 'T = -30 °C')
 savefig('fig/DAC_thr_voltage_TEMP.fig')
 exportgraphics(gcf,'pdf/DAC_thr_voltage_TEMP.pdf','ContentType','vector');
 
