@@ -20,8 +20,6 @@ BGR_gain = 4; % BGR gain
 
 f = figure('visible','on');
 
-% aggiungere legenda, assi, salvataggio e retta a 5uA
-
 hold on
 box
 for i=1:11
@@ -75,7 +73,41 @@ exportgraphics(gcf,'pdf/BGR_current_101_110_binning.pdf','ContentType','vector')
 % già plottata in BGR_plots
 
 
-%% Plot della Iref normalizzata (al valore a 0 °C) vs Temperatura. 
+%% Plot della Iref normalizzata (al valore a 0 °C) vs Temperatura. [IMON/4]
+% Su questo plot metterei 4 curve: misurata, simulata TT, SS e FF
+
+f = figure('visible','on');
+
+V_0C = flip([D_double(6, 2:8) D_double(6, 13)]); % corrente misurata in tensione (TBBB = 0101)
+I_0C = ((V_0C/BGR_gain)/BGR_R)*1000; % corrente misurata a 0°C in uA (0101)
+
+% corrente misurata normalizzata
+I_0C_norm = I_0C./I_0C(5);
+
+% correnti simulate normalizzate
+I_TT = SIM_IMON_Iref_double(:, 3)./SIM_IMON_Iref_double(5, 3)
+I_SS = SIM_IMON_Iref_double(:, 6)./SIM_IMON_Iref_double(5, 6)
+I_FF = SIM_IMON_Iref_double(:, 9)./SIM_IMON_Iref_double(5, 9)
+
+X = [-40:10:30];
+
+hold on
+plot(X, I_0C_norm, '-o') % misurata a 0°C 
+plot(X, I_TT, '-*')
+plot(X, I_SS, '-*')
+plot(X, I_FF, '-*')
+hold off
+
+box
+legend('Measured IMON/4', 'IMON/4 (TT)', 'IMON/4 (SS)', 'IMON/4 (FF)')
+title('Normalised reference current vs Temperature')
+ylabel('Reference current [\muA]')
+xlabel("Temperature [°C]")
+savefig('fig/BGR_current_normal_IMON.fig')
+exportgraphics(gcf,'pdf/BGR_current_normal_IMON.pdf','ContentType','vector');
+
+
+%% Plot della Iref normalizzata (al valore a 0 °C) vs Temperatura. [Iref]
 % Su questo plot metterei 4 curve: misurata, simulata TT, SS e FF
 
 f = figure('visible','on');
@@ -94,9 +126,16 @@ I_FF = SIM_IMON_Iref_double(:, 10)./SIM_IMON_Iref_double(5, 10)
 X = [-40:10:30];
 
 hold on
-box
 plot(X, I_0C_norm, '-o') % misurata a 0°C 
 plot(X, I_TT, '-*')
 plot(X, I_SS, '-*')
 plot(X, I_FF, '-*')
 hold off
+
+box
+legend('Measured IMON/4', 'Iref (TT)', 'Iref (SS)', 'Iref (FF)')
+title('Normalised reference current vs Temperature')
+ylabel('Reference current [\muA]')
+xlabel("Temperature [°C]")
+savefig('fig/BGR_current_normal_Iref.fig')
+exportgraphics(gcf,'pdf/BGR_current_normal_Iref.pdf','ContentType','vector');
