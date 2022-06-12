@@ -1,5 +1,7 @@
 %% DAC threshold voltage analysis [FTHR = 011, 10°C/step]
 
+f = figure('visible','off');
+
 clear; clc;
 plots = nan(1, 2);
 
@@ -15,8 +17,10 @@ for j = -40:10:30
     
     % set desired precision in terms of the number of decimal places
     n_decimal = 5;
+
     % create a new table
     new_T = varfun(@(x) num2str(x, ['%' sprintf('.%df', n_decimal)]), DATA);
+
     % preserve the variable names and the row names in the original table
     new_T.Properties.VariableNames = DATA.Properties.VariableNames;
     new_T.Properties.RowNames = DATA.Properties.RowNames;
@@ -80,6 +84,8 @@ exportgraphics(gcf,'pdf/DAC_thr_voltage_TEMP.pdf','ContentType','vector');
 clear; clc;
 plots = nan(1, 2)
 count = 0;
+
+f = figure('visible','off');
 
 % linear regression for each curve
 disp("LINEAR REGRESSION MODEL: y = a + b * x")
@@ -150,14 +156,16 @@ end
 
 box
 legend('T = -40 °C', 'T = -38 °C', 'T = -36 °C', 'T = -34 °C', 'T = -32 °C', 'T = -30 °C')
-savefig('fig/DAC_thr_voltage_TEMP.fig')
-exportgraphics(gcf,'pdf/DAC_thr_voltage_TEMP.pdf','ContentType','vector');
+savefig('fig/DAC_thr_voltage_40-30.fig')
+exportgraphics(gcf,'pdf/DAC_thr_voltage_40-30.pdf','ContentType','vector');
 
 
 %% DAC threshold voltage analysis [FTHR span @ -40°C]
 
 clear; clc;
 plots = nan(1, 2);
+
+f = figure('visible','off');
 
 % linear regression for each curve
 disp("LINEAR REGRESSION MODEL: y = a + b * x")

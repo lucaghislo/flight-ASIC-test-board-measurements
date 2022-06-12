@@ -27,6 +27,7 @@ box
 for i=1:11
     plot([1:8], SIM_ASIC_double(:, [i+2:end]), '-o')
 end
+
 % retta a 5uA per indicare valore di riferimento
 plot([1:8], [5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 1, 'Color', 'red')
 text(8.1, 5, '5\muA', 'Color', 'red')
@@ -34,7 +35,7 @@ hold off
 
 
 text(-1,4,'4 keV','Color','red','FontSize',14)
-title('BGR current vs BBB bits configuration')
+title('Reference current vs Bias setting')
 xticklabels({'000', '001', '010', '011', '100', '101', '110', '111'})
 yticks([3.5:0.5:6])
 xlabel("Bias setting")
@@ -83,13 +84,12 @@ V_0C = flip([D_double(6, 2:8) D_double(6, 13)]); % corrente misurata in tensione
 I_0C = ((V_0C/BGR_gain)/BGR_R)*1000; % corrente misurata a 0°C in uA (0101)
 
 % corrente misurata normalizzata
-Iref_0C = SIM_IMON_Iref_double(:, 4)';
-I_0C_norm = I_0C./Iref_0C;
+I_0C_norm = I_0C./I_0C(5);
 
 % correnti simulate normalizzate
-I_TT = SIM_IMON_Iref_double(:, 4)./Iref_0C';
-I_SS = SIM_IMON_Iref_double(:, 7)./Iref_0C';
-I_FF = SIM_IMON_Iref_double(:, 10)./Iref_0C';
+I_TT = SIM_IMON_Iref_double(:, 4)./SIM_IMON_Iref_double(5, 4)
+I_SS = SIM_IMON_Iref_double(:, 7)./SIM_IMON_Iref_double(5, 7)
+I_FF = SIM_IMON_Iref_double(:, 10)./SIM_IMON_Iref_double(5, 10)
 
 X = [-40:10:30];
 
