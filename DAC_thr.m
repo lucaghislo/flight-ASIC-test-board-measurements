@@ -165,7 +165,7 @@ exportgraphics(gcf,'pdf/DAC_thr_voltage_40-30.pdf','ContentType','vector');
 clear; clc;
 plots = nan(1, 2);
 
-f = figure('visible','off');
+f = figure('visible','on');
 
 % linear regression for each curve
 disp("LINEAR REGRESSION MODEL: y = a + b * x")
