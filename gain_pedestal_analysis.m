@@ -8,8 +8,8 @@ f = figure('visible','on');
 % Create and Plot Raw Data
 % HIGH GAIN (low energy, 10-100 keV) -> (1:11)
 % LOW GAIN (high energy, 40-55 MeV) -> (47:end)
-x = X_keV(47:end);
-y = T_tab_30B_mean(47:end); % manually change temperature to get gain
+x = X_keV(1:11);
+y = T_tab_30C_mean(1:11); % manually change temperature to get gain
 plot(x,y,'LineWidth',2)
 
 % Fit line to data using polyfit
@@ -36,17 +36,15 @@ clear; clc;
 f = figure('visible','on');
 
 % Create and Plot Raw Data
-x = [-40, -30, -20, -10, 0, 10, 20, 30]; % [10°C step]
+%x = [-40, -30, -20, -10, 0, 10, 20, 30]; % [10°C step]
 %x = [-40 -38 -36 -34 -32 -30]; % [2°C step]
-%x = [-40 -38 -36 -34 -32 -30 -20 -10 0 10 20 30] % [all steps]
+x = [-40 -38 -36 -34 -32 -30 -20 -10 0 10 20 30] % [all steps]
 
-%y = [0.9286 0.99537 1.0465 1.0977 1.1545 1.2305 1.2572 1.2898]; % HIGH GAIN (low energy) [10°C step, auto]
-%y = [0.011201 0.011490 0.011774 0.011989 0.012247 0.012501 0.012473 0.011799]; % LOW GAIN (high energy) [10°C step, auto]
-y = [0.85593 0.75099 0.63282 0.51795 0.39415 0.29776 0.21870 0.16317]; % HIGH GAIN (low energy) [10°C step, 530mV]
+%y = [0.9286 0.99537 1.0465 1.0977 1.1545 1.2305 1.2572 1.2898]; % HIGH GAIN (low energy) [10°C step, auto, 0011]
+%y = [0.011201 0.011490 0.011774 0.011989 0.012247 0.012501 0.012473 0.011799]; % LOW GAIN (high energy) [10°C step, auto, 0011]
+%y = [0.85593 0.75099 0.63282 0.51795 0.39415 0.29776 0.21870 0.16317]; % HIGH GAIN (low energy) [10°C step, 530mV]
 %y = [0.011237 0.011527 0.011846 0.012168 0.012511 0.012850 0.013139 0.013459]; % LOW GAIN (high energy) [10°C step, 530mV]
-
-%y = [0.93094, 0.94494, 0.95531, 0.96182, 0.95111, 0.98851]; % HIGH GAIN (low energy) [2°C step]
-%y = [0.93094, 0.94494, 0.95531, 0.96182, 0.95111, 0.98851 1.0401 1.1051 1.1646 1.2305 1.2873 1.3357]; % HIGH GAIN (low energy) [all steps]
+y = [0.87769 0.89379 0.90745 0.91659 0.91969 0.93293 0.98319 1.0447 1.0907 1.1466 1.1954 ]
 
 plot(x,y, '-o')
 
@@ -69,8 +67,8 @@ title({'Gain in X-ray detection region (40-100 keV)', 'CSAVrefGM: 530mV'});
 xlabel('Temperature [°C]');
 ylabel('Linear Gain [ADU/keV]');
 legend('Mean gain at temperature x', ['y = ' num2str(c(2)) ' + ' num2str(c(1)) ' * x'], 'Location','northeast')
-savefig('fig/low_energy_gain_530mV.fig')
-exportgraphics(gcf, 'pdf/low_energy_gain_530mV.pdf','ContentType','vector');
+savefig('fig/high_energy_gain_auto_0111.fig')
+exportgraphics(gcf, 'pdf/high_energy_gain_auto_0111.pdf','ContentType','vector');
 hold off
 
 
