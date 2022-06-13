@@ -30,8 +30,7 @@ T_m38B = readtable('MODULE_003/TransferFunction-38B.dat', 'VariableNamingRule','
 T_m40B = readtable('MODULE_003/TransferFunction-40B.dat', 'VariableNamingRule','preserve');
 
 % wait for measure
-%T_30C = readtable('MODULE_004/TransferFunction30C.dat', 'VariableNamingRule','preserve'); % REPEAT MEASURE
-T_30C = readtable('MODULE_004/TransferFunction20C.dat', 'VariableNamingRule','preserve');
+T_30C = readtable('MODULE_004/TransferFunction30C.dat', 'VariableNamingRule','preserve'); % REPEAT MEASURE
 
 T_20C = readtable('MODULE_004/TransferFunction20C.dat', 'VariableNamingRule','preserve'); 
 T_10C = readtable('MODULE_004/TransferFunction10C.dat', 'VariableNamingRule','preserve');
@@ -42,12 +41,10 @@ T_m30C = readtable('MODULE_004/TransferFunction-30C.dat', 'VariableNamingRule','
 
 
 % wait for measure
-%T_m32C = readtable('MODULE_004/TransferFunction-32C.dat', 'VariableNamingRule','preserve'); % REPEAT MEASURE
-T_m32C = readtable('MODULE_004/TransferFunction-36C.dat', 'VariableNamingRule','preserve');
+T_m32C = readtable('MODULE_004/TransferFunction-32C.dat', 'VariableNamingRule','preserve'); % REPEAT MEASURE
 
 % wait for measure
-%T_m34C = readtable('MODULE_004/TransferFunction-34C.dat', 'VariableNamingRule','preserve'); % REPEAT MEASURE
-T_m34C = readtable('MODULE_004/TransferFunction-36C.dat', 'VariableNamingRule','preserve');
+T_m34C = readtable('MODULE_004/TransferFunction-34C.dat', 'VariableNamingRule','preserve'); % REPEAT MEASURE
 
 T_m36C = readtable('MODULE_004/TransferFunction-36C.dat', 'VariableNamingRule','preserve');
 T_m38C = readtable('MODULE_004/TransferFunction-38C.dat', 'VariableNamingRule','preserve');
