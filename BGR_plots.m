@@ -33,6 +33,7 @@ legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20
 box
 savefig('fig/BGR_current_XBBB.fig')
 exportgraphics(gcf,'pdf/BGR_current_XBBB.pdf','ContentType','vector');
+exportgraphics(gcf,'eps/BGR_current_XBBB.eps','ContentType','vector');
 
 
 %% BGR current vs BBB bits configuration @ 27°C [vs Simulations]
@@ -69,6 +70,7 @@ ylabel("Reference current [\muA]")
 legend('Measurement 06/2022 (T = 30°C)', 'Measurement 09/2021 (T = 27°C)', 'SCH FF (T = 27°C)', 'SCH TT (T = 27°C)', 'SCH SS (T = 27°C)', 'Location', 'northwest')
 savefig('fig/BGR_current_XBBB_27C_sim.fig')
 exportgraphics(gcf,'pdf/BGR_current_XBBB_27C_sim.pdf','ContentType','vector');
+exportgraphics(gcf,'eps/BGR_current_XBBB_27C_sim.eps','ContentType','vector');
 
 
 %% BGR current vs temperature (per BBB bits configuration)
@@ -129,6 +131,7 @@ for i=1:8
     legend('TT (simulated)', 'FF (simulated)', 'SS (simulated)', sprintf('BBB = (%s)_{2}', bits(i)), 'Location','northeastoutside')
     savefig(sprintf('fig/BGR_current_Xtemp_%s.fig', bits(i)))
     exportgraphics(gcf,sprintf('pdf/BGR_current_Xtemp_%s.pdf',bits(i)),'ContentType','vector');
+    exportgraphics(gcf,sprintf('eps/BGR_current_Xtemp_%s.eps',bits(i)),'ContentType','vector');
 end
 
 
@@ -178,6 +181,7 @@ for i=1:8
     legend('TT (simulated)', sprintf('BBB = (%s)_{2}', bits(i)), 'Location','eastoutside')
     savefig(sprintf('fig/BGR_current_Xtemp_%s_TT.fig', bits(i)))
     exportgraphics(gcf,sprintf('pdf/BGR_current_Xtemp_%s_TT.pdf',bits(i)),'ContentType','vector');
+    exportgraphics(gcf,sprintf('eps/BGR_current_Xtemp_%s_TT.eps',bits(i)),'ContentType','vector');
 end
 
 
@@ -238,6 +242,7 @@ ylabel("Reference current [\muA]")
 legend('TT (simulated)', 'FF (simulated)', 'SS (simulated)', 'BBB = (000)_2', 'BBB = (001)_2', 'BBB = (010)_2', 'BBB = (011)_2', 'BBB = (100)_2', 'BBB = (101)_2', 'BBB = (110)_2', 'BBB = (111)_2', 'Location','eastoutside')
 savefig('fig/BGR_current_Xtemp_all-BBB.fig')
 exportgraphics(gcf,'pdf/BGR_current_Xtemp_all-BBB.pdf','ContentType','vector');
+exportgraphics(gcf,'eps/BGR_current_Xtemp_all-BBB.eps','ContentType','vector');
 
 
 %% BGR current vs BBB bits (variating temperature) [-40°C to -30°C]
@@ -270,6 +275,7 @@ ylabel("Reference current [\muA]")
 legend('T = -30°C', 'T = -32°C', 'T = -34°C', 'T = -36°C', 'T = -38°C', 'T = -40°C', 'Location', 'southeast')
 savefig('fig/BGR_current_XBBB_40-30.fig')
 exportgraphics(gcf,'pdf/BGR_current_XBBB_40-30.pdf','ContentType','vector');
+exportgraphics(gcf,'eps/BGR_current_XBBB_40-30.eps','ContentType','vector');
 
 
 %% BGR current vs temperature (all BBB bits configurations) [-40°C to -30°C]
@@ -320,3 +326,4 @@ ylabel("Reference current [\muA]")
 legend('BBB = (000)_2', 'BBB = (001)_2', 'BBB = (010)_2', 'BBB = (011)_2', 'BBB = (100)_2', 'BBB = (101)_2', 'BBB = (110)_2', 'BBB = (111)_2', 'Location','eastoutside')
 savefig('fig/BGR_current_Xtemp_all-BBB.fig')
 exportgraphics(gcf,'pdf/BGR_current_Xtemp_all-BBB_40-30.pdf','ContentType','vector');
+exportgraphics(gcf,'eps/BGR_current_Xtemp_all-BBB_40-30.eps','ContentType','vector');

@@ -15,6 +15,8 @@ ylabel('CSAVrefGM [mV]');
 legend('CSAVrefGM (measured)', 'CSAVrefGM (simulated)', 'Location','northeast');
 savefig('fig/csavrefgm_temperature_0011.fig')
 exportgraphics(gcf,'pdf/csavrefgm_temperature_0011.pdf','ContentType','vector');
+exportgraphics(gcf,'eps/csavrefgm_temperature_0011.eps','ContentType','vector');
+
 
 
 %% CSAVREFGM [mV] during testing vs temperature (H = 0, RRR = 111)
@@ -33,6 +35,8 @@ ylabel('CSAVrefGM [mV]');
 legend('CSAVrefGM (measured)', 'CSAVrefGM (simulated)', 'Location','northeast');
 savefig('fig/csavrefgm_temperature_0111.fig')
 exportgraphics(gcf,'pdf/csavrefgm_temperature_0111.pdf','ContentType','vector');
+exportgraphics(gcf,'eps/csavrefgm_temperature_0111.eps','ContentType','vector');
+
 
 
 %% CSAVREFGM [HRRR = 0011] vs CSAVREFGM [HRRR = 0111] vs simulation
@@ -46,6 +50,7 @@ ylabel('CSAVrefGM [mV]');
 legend('HRRR = (0011)_2', 'HRRR = (0111)_2', 'Simulated HRRR = (0011)_2', 'Location','northeast');
 savefig('fig/csavrefgm_RRR_011_111.fig')
 exportgraphics(gcf,'pdf/csavrefgm_RRR_011_111.pdf','ContentType','vector')
+exportgraphics(gcf,'eps/csavrefgm_RRR_011_111.eps','ContentType','vector')
 
 
 %% CSAVREFGM [mV] during testing vs RRR bits configuration @ -40°C (H=0)
@@ -63,6 +68,8 @@ xlabel('RRR bits');
 ylabel('CSAVrefGM [mV]');
 savefig('fig/csavrefgm_RRR_-40C_H0.fig')
 exportgraphics(gcf,'pdf/csavrefgm_RRR_-40C_H0.pdf','ContentType','vector');
+exportgraphics(gcf,'eps/csavrefgm_RRR_-40C_H0.eps','ContentType','vector');
+
 
 
 %% CSAVREFGM [mV] during testing vs RRR bits configuration @ -40°C (H=1)
@@ -78,6 +85,7 @@ xlabel('RRR bits');
 ylabel('CSAVrefGM [mV]');
 savefig('fig/csavrefgm_RRR_-40C_H1.fig')
 exportgraphics(gcf,'pdf/csavrefgm_RRR_-40C_H1.pdf','ContentType','vector');
+exportgraphics(gcf,'eps/csavrefgm_RRR_-40C_H1.eps','ContentType','vector');
 
 
 %% CSAVREFGM [mV] vs RRR bits @ -40°C (H=0 vs H=1)
@@ -92,3 +100,4 @@ ylabel('CSAVrefGM [mV]');
 legend('H = 0', 'H = 1','Location','southeast')
 savefig('fig/csavrefgm_RRR_-40C_H0H1.fig')
 exportgraphics(gcf,'pdf/csavrefgm_RRR_-40C_H0H1.pdf','ContentType','vector');
+exportgraphics(gcf,'eps/csavrefgm_RRR_-40C_H0H1.eps','ContentType','vector');

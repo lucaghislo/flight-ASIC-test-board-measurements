@@ -12,6 +12,8 @@ xlabel('Temperature [°C]');
 ylabel('IAVDD [mA]');
 savefig('fig/IAVDD_temp_CSAVREFGM_auto_HRRR_0011.fig')
 exportgraphics(gcf,'pdf/IAVDD_temp_CSAVREFGM_auto_HRRR_0011.pdf','ContentType','vector');
+exportgraphics(gcf,'eps/IAVDD_temp_CSAVREFGM_auto_HRRR_0011.eps','ContentType','vector');
+
 
 
 %% IAVDD [mA] vs Temperature (CSAVREFGM: auto) (HRRR = 0111)
@@ -27,6 +29,7 @@ xlabel('Temperature [°C]');
 ylabel('IAVDD [mA]');
 savefig('fig/IAVDD_temp_CSAVREFGM_auto_HRRR_0111.fig')
 exportgraphics(gcf,'pdf/IAVDD_temp_CSAVREFGM_auto_HRRR_0111.pdf','ContentType','vector');
+exportgraphics(gcf,'eps/IAVDD_temp_CSAVREFGM_auto_HRRR_0111.eps','ContentType','vector');
 
 
 %% IAVDD [mA] vs Temperature (CSAVREFGM: 530mV)
@@ -41,6 +44,7 @@ xlabel('Temperature [°C]');
 ylabel('IAVDD [mA]');
 savefig('fig/IAVDD_temp_CSAVREFGM_530mV.fig')
 exportgraphics(gcf,'pdf/IAVDD_temp_CSAVREFGM_530mV.pdf','ContentType','vector');
+exportgraphics(gcf,'eps/IAVDD_temp_CSAVREFGM_530mV.eps','ContentType','vector');
 
 
 %% IAVDD [mA] vs Temperature (CSAVREFGM: auto [HRRR = 0011, HRRR = 0111] vs 530mV)
@@ -54,3 +58,4 @@ ylabel('IAVDD [mA]');
 legend('CSAVrefGM = auto [HRRR = (0011)_2]', 'CSAVrefGM = auto [HRRR = (0111)_2]', 'CSAVrefGM = 530mV','Location','northeast')
 savefig('fig/IAVDD_temp_CSAVREFGM_auto-530mV.fig')
 exportgraphics(gcf,'pdf/IAVDD_temp_CSAVREFGM_auto-530mV.pdf','ContentType','vector');
+exportgraphics(gcf,'eps/IAVDD_temp_CSAVREFGM_auto-530mV.eps','ContentType','vector');

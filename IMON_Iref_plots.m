@@ -41,6 +41,7 @@ ylabel("IMON/4 [\muA]")
 legend('00', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', 'Location','southeast')
 savefig('fig/BGR_current_11ASIC_XBBB.fig')
 exportgraphics(gcf,'pdf/BGR_current_11ASIC_XBBB.pdf','ContentType','vector');
+exportgraphics(gcf,'eps/BGR_current_11ASIC_XBBB.eps','ContentType','vector');
 
 
 %% Plot dei dati dopo il binning per le due sole configurazioni 101 e 110 [misure 11 ASIC]
@@ -66,6 +67,7 @@ title({'Reference current values distribution', ' for BBB = (101)_2 and BBB = (1
 
 savefig('fig/BGR_current_101_110_binning.fig')
 exportgraphics(gcf,'pdf/BGR_current_101_110_binning.pdf','ContentType','vector');
+exportgraphics(gcf,'eps/BGR_current_101_110_binning.eps','ContentType','vector');
 
 
 %% Plot della Iref misurata vs bit setting (BBB) ma per le diverse temperature
@@ -105,6 +107,7 @@ ylabel('Reference current [\muA]')
 xlabel("Temperature [°C]")
 savefig('fig/BGR_current_normal_IMON.fig')
 exportgraphics(gcf,'pdf/BGR_current_normal_IMON.pdf','ContentType','vector');
+exportgraphics(gcf,'eps/BGR_current_normal_IMON.eps','ContentType','vector');
 
 
 %% Plot della Iref normalizzata (al valore a 0 °C) vs Temperatura. [Iref]
@@ -139,3 +142,4 @@ ylabel('Reference current [\muA]')
 xlabel("Temperature [°C]")
 savefig('fig/BGR_current_normal_Iref.fig')
 exportgraphics(gcf,'pdf/BGR_current_normal_Iref.pdf','ContentType','vector');
+exportgraphics(gcf,'eps/BGR_current_normal_Iref.eps','ContentType','vector');
