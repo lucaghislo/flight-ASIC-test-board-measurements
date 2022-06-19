@@ -61,6 +61,9 @@ hold off
 box
 legend(['BBB = (101)_2, \mu = ', sprintf('%.3f', dist_101.mu), '\muA'], '', ['BBB = (110)_2, \mu = ', sprintf('%.3f', dist_110.mu), '\muA'])
 ylim([0, 7])
+xlim([4.7 5.5])
+xticks([4.7:0.1:5.5])
+xticklabels([4.7:0.1:5.5])
 xlabel('Reference current [\muA]')
 ylabel('Entries')
 title({'Reference current values distribution', ' for BBB = (101)_2 and BBB = (110)_2'})

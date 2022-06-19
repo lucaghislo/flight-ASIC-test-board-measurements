@@ -18,7 +18,6 @@ exportgraphics(gcf,'pdf/csavrefgm_temperature_0011.pdf','ContentType','vector');
 exportgraphics(gcf,'eps/csavrefgm_temperature_0011.eps','ContentType','vector');
 
 
-
 %% CSAVREFGM [mV] during testing vs temperature (H = 0, RRR = 111)
 
 CSAVREFGM_111 = flip([370.9 392.0 413.8 436.3 458.4 480.6 504.3 507.5 512.0 513.4 520.9 525.8]); % measured with H=0 during testing
@@ -36,7 +35,6 @@ legend('CSAVrefGM (measured)', 'CSAVrefGM (simulated)', 'Location','northeast');
 savefig('fig/csavrefgm_temperature_0111.fig')
 exportgraphics(gcf,'pdf/csavrefgm_temperature_0111.pdf','ContentType','vector');
 exportgraphics(gcf,'eps/csavrefgm_temperature_0111.eps','ContentType','vector');
-
 
 
 %% CSAVREFGM [HRRR = 0011] vs CSAVREFGM [HRRR = 0111] vs simulation
@@ -69,7 +67,6 @@ ylabel('CSAVrefGM [mV]');
 savefig('fig/csavrefgm_RRR_-40C_H0.fig')
 exportgraphics(gcf,'pdf/csavrefgm_RRR_-40C_H0.pdf','ContentType','vector');
 exportgraphics(gcf,'eps/csavrefgm_RRR_-40C_H0.eps','ContentType','vector');
-
 
 
 %% CSAVREFGM [mV] during testing vs RRR bits configuration @ -40°C (H=1)

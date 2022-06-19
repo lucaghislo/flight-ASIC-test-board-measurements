@@ -77,6 +77,7 @@ box
 legend('T = -40 °C', 'T = -30 °C', 'T = -20 °C', 'T = -10 °C', 'T = 0 °C', 'T = 10 °C', 'T = 20 °C', 'T = 30 °C')
 savefig('fig/DAC_thr_voltage_TEMP.fig')
 exportgraphics(gcf,'pdf/DAC_thr_voltage_TEMP.pdf','ContentType','vector');
+exportgraphics(gcf,'eps/DAC_thr_voltage_TEMP.eps','ContentType','vector');
 
 
 %% DAC threshold voltage analysis [FTHR = 011, 2°C/step]
@@ -158,6 +159,7 @@ box
 legend('T = -40 °C', 'T = -38 °C', 'T = -36 °C', 'T = -34 °C', 'T = -32 °C', 'T = -30 °C')
 savefig('fig/DAC_thr_voltage_40-30.fig')
 exportgraphics(gcf,'pdf/DAC_thr_voltage_40-30.pdf','ContentType','vector');
+exportgraphics(gcf,'eps/DAC_thr_voltage_40-30.eps','ContentType','vector');
 
 
 %% DAC threshold voltage analysis [FTHR span @ -40°C]
@@ -233,3 +235,4 @@ box
 legend(plots, 'FTHR = (000)_2', 'FTHR = (001)_2', 'FTHR = (010)_2', 'FTHR = (011)_2', 'FTHR = (100)_2', 'FTHR = (101)_2', 'FTHR = (110)_2', 'FTHR = (111)_2')
 savefig('fig/DAC_thr_voltage_FTHR_-40C.fig')
 exportgraphics(gcf,'pdf/DAC_thr_voltage_FTHR_-40C.pdf','ContentType','vector');
+exportgraphics(gcf,'eps/DAC_thr_voltage_FTHR_-40C.eps','ContentType','vector');

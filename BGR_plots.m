@@ -62,6 +62,7 @@ plot([1:8], [5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 1, 'Color', 'red')
 text(8.1, 5, '5\muA', 'Color', 'red')
 hold off
 
+box
 title('Reference current vs Bias setting')
 xticklabels({'000', '001', '010', '011', '100', '101', '110', '111'})
 %yticks([3.5:0.1:5.5])
@@ -235,7 +236,8 @@ text(32, 4.9, '5\muA', 'Color', 'red')
 hold off
 
 xlim([-50 40])
-xticks([-50 -40 -30 -20 -10 0 10 20 30])
+xticks([ -40 -30 -20 -10 0 10 20 30])
+xticklabels([ -40 -30 -20 -10 0 10 20 30])
 title('Reference current vs Temperature')
 xlabel("Temperature [°C]")
 ylabel("Reference current [\muA]")
@@ -320,6 +322,7 @@ hold off
 box
 xlim([-42 -28])
 xticks([-40 -38 -36 -34 -32 -30 -28 -26 -24])
+xticklabels([-40 -38 -36 -34 -32 -30])
 title('Reference current vs Temperature')
 xlabel("Temperature [°C]")
 ylabel("Reference current [\muA]")
