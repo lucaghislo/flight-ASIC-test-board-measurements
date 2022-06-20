@@ -344,7 +344,7 @@ T_tab_m40C_std(2:2:end) = nan;
 
 f = figure('visible','off');
 
-box
+
 hold on
 errorbar(X(1:55), T_tab_30A_mean, T_tab_30A_std)
 hold on;
@@ -362,14 +362,18 @@ errorbar(X(1:55), T_tab_m30A_mean, T_tab_m30A_std)
 hold on;
 errorbar(X(1:55), T_tab_m40A_mean, T_tab_m40A_std)
 
-title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM auto [HRRR = (0011)_2]']);
+box
+%title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM auto [HRRR = (0011)_2]']);
 xlabel('CAL\_Voltage [DAC\_inj Code]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 64000]);
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
+
 savefig(sprintf('fig/errbar_fdt_csavrefgm_auto_tau%d_DAC_0011.fig', tau))
 exportgraphics(gcf, sprintf('pdf/errbar_fdt_csavrefgm_auto_tau%d_DAC_0011.pdf', tau),'ContentType','vector');
-exportgraphics(gcf, sprintf('eps/errbar_fdt_csavrefgm_auto_tau%d_DAC_0011.eps', tau),'ContentType','vector');
 
 
 %% errorbar plot TDF CSAVrefGM: auto [X axis: DAC code] [HRRR = 0111]
@@ -394,14 +398,17 @@ errorbar(X(1:55), T_tab_m30C_mean, T_tab_m30C_std)
 hold on;
 errorbar(X(1:55), T_tab_m40C_mean, T_tab_m40C_std)
 
-title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM auto [HRRR = (0111)_2]']);
+%title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM auto [HRRR = (0111)_2]']);
 xlabel('CAL\_Voltage [DAC\_inj Code]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 64000]);
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
+
 savefig(sprintf('fig/errbar_fdt_csavrefgm_auto_tau%d_DAC_0111.fig', tau))
 exportgraphics(gcf, sprintf('pdf/errbar_fdt_csavrefgm_auto_tau%d_DAC_0111.pdf', tau),'ContentType','vector');
-exportgraphics(gcf, sprintf('eps/errbar_fdt_csavrefgm_auto_tau%d_DAC_0111.eps', tau),'ContentType','vector');
 
 
 %% simple line plot TDF CSAVrefGM: auto [X axis: DAC code] [HRRR = 0011]
@@ -426,14 +433,17 @@ plot(X(1:55), T_tab_m30A_mean)
 hold on;
 plot(X(1:55), T_tab_m40A_mean)
 
-title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM auto [HRRR = (0011)_2]']);
+%title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM auto [HRRR = (0011)_2]']);
 xlabel('CAL\_Voltage [DAC\_inj Code]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 64000]);
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
+
 savefig('fig/fdt_csavrefgm_auto_tau6_DAC_0011.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_auto_tau6_DAC_0011.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/fdt_csavrefgm_auto_tau6_DAC_0011.eps','ContentType','vector');
 
 
 %% simple line plot TDF CSAVrefGM: auto [X axis: DAC code] [HRRR = 0111]
@@ -458,14 +468,17 @@ plot(X(1:55), T_tab_m30C_mean)
 hold on;
 plot(X(1:55), T_tab_m40C_mean)
 
-title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM auto [HRRR = (0111)_2]']);
+%title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM auto [HRRR = (0111)_2]']);
 xlabel('CAL\_Voltage [DAC\_inj Code]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 64000]);
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
+
 savefig('fig/fdt_csavrefgm_auto_tau6_DAC_0111.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_auto_tau6_DAC_0111.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/fdt_csavrefgm_auto_tau6_DAC_0111.eps','ContentType','vector');
 
 
 %% errorbar plot TDF CSAVrefGM: fixed @ 530mV [X axis: DAC code]
@@ -490,14 +503,17 @@ errorbar(X(1:55), T_tab_m30B_mean, T_tab_m30B_std)
 hold on;
 errorbar(X(1:55), T_tab_m40B_mean, T_tab_m40B_std)
 
-title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM fixed @ 530mV']);
+%title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM fixed @ 530mV']);
 xlabel('CAL\_Voltage [DAC\_inj Code]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 64000]);
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
+
 savefig('fig/errbar_fdt_csavrefgm_530mV_tau6_DAC.fig')
 exportgraphics(gcf,'pdf/errbar_fdt_csavrefgm_530mV_tau6_DAC.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/errbar_fdt_csavrefgm_530mV_tau6_DAC.eps','ContentType','vector');
 
 
 %% simple line plot TDF CSAVrefGM: fixed @ 530mV [X axis: DAC code]
@@ -522,14 +538,17 @@ plot(X(1:55), T_tab_m30B_mean)
 hold on;
 plot(X(1:55), T_tab_m40B_mean)
 
-title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM fixed @ 530mV']);
+%title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM fixed @ 530mV']);
 xlabel('CAL\_Voltage [DAC\_inj Code]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 64000]);
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
+
 savefig('fig/fdt_csavrefgm_530mV_tau6_DAC.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_530mV_tau6_DAC.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/fdt_csavrefgm_530mV_tau6_DAC.eps','ContentType','vector');
 
 
 %% errorbar plot TDF CSAVrefGM: auto [X axis: keV] [HRRR = 0011]
@@ -554,14 +573,17 @@ errorbar(X_keV(1:55), T_tab_m30A_mean, T_tab_m30A_std)
 hold on;
 errorbar(X_keV(1:55), T_tab_m40A_mean, T_tab_m40A_std)
 
-title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM auto [HRRR = (0011)_2]']);
+%title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM auto [HRRR = (0011)_2]']);
 xlabel('Incoming energy [keV]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 53824]);
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
+
 savefig('fig/errbar_fdt_csavrefgm_auto_tau6_keV_0011.fig')
 exportgraphics(gcf,'pdf/errbar_fdt_csavrefgm_auto_tau6_keV_0011.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/errbar_fdt_csavrefgm_auto_tau6_keV_0011.eps','ContentType','vector');
 
 
 %% errorbar plot TDF CSAVrefGM: auto [X axis: keV] [HRRR = 0111]
@@ -586,14 +608,17 @@ errorbar(X_keV(1:55), T_tab_m30C_mean, T_tab_m30C_std)
 hold on;
 errorbar(X_keV(1:55), T_tab_m40C_mean, T_tab_m40C_std)
 
-title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM auto [HRRR = (0111)_2]']);
+%title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM auto [HRRR = (0111)_2]']);
 xlabel('Incoming energy [keV]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 53824]);
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
+
 savefig('fig/errbar_fdt_csavrefgm_auto_tau6_keV_0111.fig')
 exportgraphics(gcf,'pdf/errbar_fdt_csavrefgm_auto_tau6_keV_0111.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/errbar_fdt_csavrefgm_auto_tau6_keV_0111.eps','ContentType','vector');
 
 
 %% simple line plot TDF CSAVrefGM: auto [X axis: keV] [HRRR = 0011]
@@ -618,14 +643,17 @@ plot(X_keV(1:55), T_tab_m30A_mean)
 hold on;
 plot(X_keV(1:55), T_tab_m40A_mean)
 
-title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM auto [HRRR = (0011)_2]']);
+%title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM auto [HRRR = (0011)_2]']);
 xlabel('Incoming energy [keV]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 53824]);
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
+
 savefig('fig/fdt_csavrefgm_auto_tau6_keV_0011.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_auto_tau6_keV_0011.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/fdt_csavrefgm_auto_tau6_keV_0011.eps','ContentType','vector');
 
 
 %% simple line plot TDF CSAVrefGM: auto [X axis: keV] [HRRR = 0111]
@@ -650,14 +678,17 @@ plot(X_keV(1:55), T_tab_m30C_mean)
 hold on;
 plot(X_keV(1:55), T_tab_m40C_mean)
 
-title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM auto [HRRR = (0111)_2]']);
+%title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM auto [HRRR = (0111)_2]']);
 xlabel('Incoming energy [keV]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 53824]);
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
+
 savefig('fig/fdt_csavrefgm_auto_tau6_keV_0111.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_auto_tau6_keV_0111.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/fdt_csavrefgm_auto_tau6_keV_0111.eps','ContentType','vector');
 
 
 %% errorbar plot TDF CSAVrefGM: fixed @ 530mV [X axis: keV]
@@ -682,14 +713,17 @@ errorbar(X_keV(1:55), T_tab_m30B_mean, T_tab_m30B_std)
 hold on;
 errorbar(X_keV(1:55), T_tab_m40B_mean, T_tab_m40B_std)
 
-title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM fixed @ 530mV']);
+%title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM fixed @ 530mV']);
 xlabel('Incoming energy [keV]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 53824]);
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
+
 savefig('fig/errbar_fdt_csavrefgm_530mV_tau6_keV.fig')
 exportgraphics(gcf,'pdf/errbar_fdt_csavrefgm_530mV_tau6_keV.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/errbar_fdt_csavrefgm_530mV_tau6_keV.eps','ContentType','vector');
 
 
 %% simple line plot TDF CSAVrefGM: fixed @ 530mV [X axis: keV]
@@ -714,21 +748,23 @@ plot(X_keV(1:55), T_tab_m30B_mean)
 hold on;
 plot(X_keV(1:55), T_tab_m40B_mean)
 
-title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM fixed @ 530mV']);
+%title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM fixed @ 530mV']);
 xlabel('Incoming energy [keV]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 53824]);
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
+
 savefig('fig/fdt_csavrefgm_530mV_tau6_keV.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_530mV_tau6_keV.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/fdt_csavrefgm_530mV_tau6_keV.eps','ContentType','vector');
 
 
 %% simple line plot TDF CSAVrefGM: auto [X axis: DAC code] [-40°C to -30°C] [HRRR = 0011]
 
 f = figure('visible','off');
 
-box
 hold on
 plot(X(1:55), T_tab_m30A_mean)
 hold on;
@@ -742,21 +778,24 @@ plot(X(1:55), T_tab_m38A_mean)
 hold on;
 plot(X(1:55), T_tab_m40A_mean)
 
-title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM auto [HRRR = (0011)_2]']);
+box
+%title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM auto [HRRR = (0011)_2]']);
 xlabel('CAL\_Voltage [DAC\_inj Code]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 64000]);
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 legend('T = -30°C', 'T = -32°C', 'T = -34°C', 'T = -36°C', 'T = -38°C', 'T = -40°C', 'Location','southeast')
+
 savefig('fig/fdt_csavrefgm_auto_tau6_DAC_40-30_0011.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_auto_tau6_DAC_40-30_0011.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/fdt_csavrefgm_auto_tau6_DAC_40-30_0011.eps','ContentType','vector');
 
 
 %% simple line plot TDF CSAVrefGM: auto [X axis: DAC code] [-40°C to -30°C] [HRRR = 0111]
 
 f = figure('visible','off');
 
-box
 hold on
 plot(X(1:55), T_tab_m30C_mean)
 hold on;
@@ -770,14 +809,18 @@ plot(X(1:55), T_tab_m38C_mean)
 hold on;
 plot(X(1:55), T_tab_m40C_mean)
 
-title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM auto [HRRR = (0111)_2]']);
+box
+%title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM auto [HRRR = (0111)_2]']);
 xlabel('CAL\_Voltage [DAC\_inj Code]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 64000]);
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 legend('T = -30°C', 'T = -32°C', 'T = -34°C', 'T = -36°C', 'T = -38°C', 'T = -40°C', 'Location','southeast')
+
 savefig('fig/fdt_csavrefgm_auto_tau6_DAC_40-30_0111.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_auto_tau6_DAC_40-30_0111.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/fdt_csavrefgm_auto_tau6_DAC_40-30_0111.eps','ContentType','vector');
 
 
 %% simple line plot TDF CSAVrefGM: fixed @ 530mV [X axis: DAC code] [-40°C to -30°C]
@@ -798,14 +841,17 @@ hold on;
 plot(X(1:55), T_tab_m40B_mean)
 
 box
-title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM fixed @ 530mV']);
+%title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM fixed @ 530mV']);
 xlabel('CAL\_Voltage [DAC\_inj Code]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 64000]);
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 legend('T = -30°C', 'T = -32°C', 'T = -34°C', 'T = -36°C', 'T = -38°C', 'T = -40°C', 'Location','southeast')
+
 savefig('fig/fdt_csavrefgm_530mV_tau6_DAC_40-30.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_530mV_tau6_DAC_40-30.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/fdt_csavrefgm_530mV_tau6_DAC_40-30.eps','ContentType','vector');
 
 
 %% simple line plot TDF CSAVrefGM: auto & 530mV [X axis: DAC code] [-40°C to 30°C, 10°C/step] [HRRR = 0011]
@@ -837,14 +883,16 @@ hold off
 legend([p1A, p1B], 'CSAVrefGM = auto', 'CSAVrefGM = 530mV', 'Location','southeast')
 
 box
-title(['Transfer Function for \tau_{' num2str(tau) '} (-40°C / 30°C range)']);
+%title(['Transfer Function for \tau_{' num2str(tau) '} (-40°C / 30°C range)']);
 xlabel('CAL\_Voltage [DAC\_inj Code]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 64000]);
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 
 savefig('fig/fdt_csavrefgm_auto-530mV_tau6_DAC_0011.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_auto-530mV_tau6_DAC_0011.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/fdt_csavrefgm_auto-530mV_tau6_DAC_0011.eps','ContentType','vector');
 
 
 %% simple line plot TDF CSAVrefGM HRRR = 0011 & HRRR = 0111 [X axis: DAC code] [-40°C to 30°C, 10°C/step]
@@ -876,14 +924,16 @@ hold off
 legend([p1A, p1B], 'CSAVrefGM = auto [HRRR = (0011)_2]', 'CSAVrefGM = auto [HRRR = (0111)_2]', 'Location','southeast')
 
 box
-title(['Transfer Function for \tau_{' num2str(tau) '} (-40°C / 30°C range)']);
+%title(['Transfer Function for \tau_{' num2str(tau) '} (-40°C / 30°C range)']);
 xlabel('CAL\_Voltage [DAC\_inj Code]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 64000]);
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 
 savefig('fig/fdt_csavrefgm_auto_0011_0111_tau6_DAC.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_auto_0011_0111_tau6_DAC.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/fdt_csavrefgm_auto_0011_0111_tau6_DAC.eps','ContentType','vector');
 
 
 %% simple line plot TDF CSAVrefGM: auto & 530mV [X axis: DAC code] [-40°C to -30°C, 2°C/step] [HRRR = 0011]
@@ -911,14 +961,16 @@ hold off
 legend([p1A, p1B], 'CSAVrefGM = auto [HRRR = (0011)_2]', 'CSAVrefGM = 530mV', 'Location','southeast')
 
 box
-title(['Transfer Function for \tau_{' num2str(tau) '} (-40°C / -30°C range)']);
+%title(['Transfer Function for \tau_{' num2str(tau) '} (-40°C / -30°C range)']);
 xlabel('CAL\_Voltage [DAC\_inj Code]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 64000]);
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 
 savefig('fig/fdt_csavrefgm_auto-530mV_tau6_DAC_40-30_0011.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_auto-530mV_tau6_DAC_40-30_0011.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/fdt_csavrefgm_auto-530mV_tau6_DAC_40-30_0011.eps','ContentType','vector');
 
 
 %% simple line plot TDF CSAVrefGM HRRR = 0011 & HRRR = 0111 [X axis: DAC code] [-40°C to -30°C, 2°C/step]
@@ -945,14 +997,16 @@ hold off
 
 box
 legend([p1A, p1B], 'CSAVrefGM = auto [HRRR = (0011)_2]', 'CSAVrefGM = auto [HRRR = (0111)_2]', 'Location','southeast')
-title(['Transfer Function for \tau_{' num2str(tau) '} (-40°C / -30°C range)']);
+%title(['Transfer Function for \tau_{' num2str(tau) '} (-40°C / -30°C range)']);
 xlabel('CAL\_Voltage [DAC\_inj Code]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 64000]);
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 
 savefig('fig/fdt_csavrefgm_auto_0011_0111_tau6_DAC_40-30.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_auto_0011_0111_tau6_DAC_40-30.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/fdt_csavrefgm_auto_0011_0111_tau6_DAC_40-30.eps','ContentType','vector');
 
 
 %% simple line plot TDF CSAVrefGM: auto [X axis: keV] [-40°C to -30°C] [HRRR = 0011]
@@ -972,14 +1026,17 @@ hold on;
 plot(X_keV(1:55), T_tab_m40A_mean)
 
 box
-title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM auto [HRRR = (0011)_2]']);
+%title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM auto [HRRR = (0011)_2]']);
 xlabel('Incoming energy [keV]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 53824]);
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
+
 legend('T = -30°C', 'T = -32°C', 'T = -34°C', 'T = -36°C', 'T = -38°C', 'T = -40°C', 'Location','southeast')
 savefig('fig/fdt_csavrefgm_auto_tau6_keV_40-30_0011.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_auto_tau6_DAC_40-30_0011.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/fdt_csavrefgm_auto_tau6_DAC_40-30_0011.eps','ContentType','vector');
 
 
 %% simple line plot TDF CSAVrefGM: auto [X axis: keV] [-40°C to -30°C] [HRRR = 0111]
@@ -999,14 +1056,17 @@ hold on;
 plot(X_keV(1:55), T_tab_m40C_mean)
 
 box
-title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM auto [HRRR = (0111)_2]']);
+%title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM auto [HRRR = (0111)_2]']);
 xlabel('Incoming energy [keV]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 53824]);
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
+
 legend('T = -30°C', 'T = -32°C', 'T = -34°C', 'T = -36°C', 'T = -38°C', 'T = -40°C', 'Location','southeast')
 savefig('fig/fdt_csavrefgm_auto_tau6_keV_40-30_0111.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_auto_tau6_DAC_40-30_0111.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/fdt_csavrefgm_auto_tau6_DAC_40-30_0111.eps','ContentType','vector');
 
 
 %% simple line plot TDF CSAVrefGM: fixed @ 530mV [X axis: keV] [-40°C to -30°C]
@@ -1026,11 +1086,14 @@ hold on;
 plot(X_keV(1:55), T_tab_m40B_mean)
 
 box
-title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM fixed @ 530mV']);
+%title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM fixed @ 530mV']);
 xlabel('Incoming energy [keV]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 53824]);
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
+
 legend('T = -30°C', 'T = -32°C', 'T = -34°C', 'T = -36°C', 'T = -38°C', 'T = -40°C', 'Location','southeast')
 savefig('fig/fdt_csavrefgm_530mV_tau6_keV_40-30.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_530mV_tau6_keV_40-30.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/fdt_csavrefgm_530mV_tau6_keV_40-30.eps','ContentType','vector');

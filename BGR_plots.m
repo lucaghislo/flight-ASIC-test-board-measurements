@@ -24,16 +24,18 @@ plot([1:8], [5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 1, 'Color', 'red')
 text(8.1, 5, '5\muA', 'Color', 'red')
 hold off
 
-title('Reference current vs Bias setting')
+%title('Reference current vs Bias setting')
 xticklabels({'000', '001', '010', '011', '100', '101', '110', '111'})
 yticks([3.5:0.5:5.5])
 xlabel("Bias setting")
 ylabel("Reference current [\muA]")
 legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
 box
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 savefig('fig/BGR_current_XBBB.fig')
 exportgraphics(gcf,'pdf/BGR_current_XBBB.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/BGR_current_XBBB.eps','ContentType','vector');
 
 
 %% BGR current vs BBB bits configuration @ 27°C [vs Simulations]
@@ -63,15 +65,17 @@ text(8.1, 5, '5\muA', 'Color', 'red')
 hold off
 
 box
-title('Reference current vs Bias setting')
+%title('Reference current vs Bias setting')
 xticklabels({'000', '001', '010', '011', '100', '101', '110', '111'})
 %yticks([3.5:0.1:5.5])
 xlabel("Bias setting")
 ylabel("Reference current [\muA]")
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 legend('Measurement 06/2022 (T = 30°C)', 'Measurement 09/2021 (T = 27°C)', 'SCH FF (T = 27°C)', 'SCH TT (T = 27°C)', 'SCH SS (T = 27°C)', 'Location', 'northwest')
 savefig('fig/BGR_current_XBBB_27C_sim.fig')
 exportgraphics(gcf,'pdf/BGR_current_XBBB_27C_sim.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/BGR_current_XBBB_27C_sim.eps','ContentType','vector');
 
 
 %% BGR current vs temperature (per BBB bits configuration)
@@ -126,13 +130,15 @@ for i=1:8
     xticks([-100 -80 -60 -40 -30 -20 -10 0 10 20 30])
     ylim([3.5, 6.5])
     yticks([3.5:0.5:6.5])
-    title(['Reference current vs Temperature'])
+    %title(['Reference current vs Temperature'])
     xlabel("Temperature [°C]")
     ylabel("Reference current [\muA]")
+    set(gcf, 'Color', 'w');
+    set(gca,'fontname','Computer Modern') 
+    grid on
     legend('TT (simulated)', 'FF (simulated)', 'SS (simulated)', sprintf('BBB = (%s)_{2}', bits(i)), 'Location','northeastoutside')
     savefig(sprintf('fig/BGR_current_Xtemp_%s.fig', bits(i)))
     exportgraphics(gcf,sprintf('pdf/BGR_current_Xtemp_%s.pdf',bits(i)),'ContentType','vector');
-    exportgraphics(gcf,sprintf('eps/BGR_current_Xtemp_%s.eps',bits(i)),'ContentType','vector');
 end
 
 
@@ -176,13 +182,15 @@ for i=1:8
 
     xlim([-50 40])
     xticks([-100 -80 -60 -40 -30 -20 -10 0 10 20 30])
-    title(['Reference current vs Temperature'])
+    %title(['Reference current vs Temperature'])
     xlabel("Temperature [°C]")
     ylabel("Reference current [\muA]")
+    set(gcf, 'Color', 'w');
+    set(gca,'fontname','Computer Modern') 
+    grid on
     legend('TT (simulated)', sprintf('BBB = (%s)_{2}', bits(i)), 'Location','eastoutside')
     savefig(sprintf('fig/BGR_current_Xtemp_%s_TT.fig', bits(i)))
     exportgraphics(gcf,sprintf('pdf/BGR_current_Xtemp_%s_TT.pdf',bits(i)),'ContentType','vector');
-    exportgraphics(gcf,sprintf('eps/BGR_current_Xtemp_%s_TT.eps',bits(i)),'ContentType','vector');
 end
 
 
@@ -238,13 +246,15 @@ hold off
 xlim([-50 40])
 xticks([ -40 -30 -20 -10 0 10 20 30])
 xticklabels([ -40 -30 -20 -10 0 10 20 30])
-title('Reference current vs Temperature')
+%title('Reference current vs Temperature')
 xlabel("Temperature [°C]")
 ylabel("Reference current [\muA]")
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 legend('TT (simulated)', 'FF (simulated)', 'SS (simulated)', 'BBB = (000)_2', 'BBB = (001)_2', 'BBB = (010)_2', 'BBB = (011)_2', 'BBB = (100)_2', 'BBB = (101)_2', 'BBB = (110)_2', 'BBB = (111)_2', 'Location','eastoutside')
 savefig('fig/BGR_current_Xtemp_all-BBB.fig')
 exportgraphics(gcf,'pdf/BGR_current_Xtemp_all-BBB.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/BGR_current_Xtemp_all-BBB.eps','ContentType','vector');
 
 
 %% BGR current vs BBB bits (variating temperature) [-40°C to -30°C]
@@ -270,14 +280,16 @@ plot([1:8], [5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 1, 'Color', 'red')
 text(8.1, 5, '5\muA', 'Color', 'red')
 hold off
 box
-title('Reference current vs Bias setting')
+%title('Reference current vs Bias setting')
 xticklabels({'000', '001', '010', '011', '100', '101', '110', '111'})
 xlabel("Bias setting")
 ylabel("Reference current [\muA]")
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 legend('T = -30°C', 'T = -32°C', 'T = -34°C', 'T = -36°C', 'T = -38°C', 'T = -40°C', 'Location', 'southeast')
 savefig('fig/BGR_current_XBBB_40-30.fig')
 exportgraphics(gcf,'pdf/BGR_current_XBBB_40-30.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/BGR_current_XBBB_40-30.eps','ContentType','vector');
 
 
 %% BGR current vs temperature (all BBB bits configurations) [-40°C to -30°C]
@@ -323,10 +335,12 @@ box
 xlim([-42 -28])
 xticks([-40 -38 -36 -34 -32 -30 -28 -26 -24])
 xticklabels([-40 -38 -36 -34 -32 -30])
-title('Reference current vs Temperature')
+%title('Reference current vs Temperature')
 xlabel("Temperature [°C]")
 ylabel("Reference current [\muA]")
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 legend('BBB = (000)_2', 'BBB = (001)_2', 'BBB = (010)_2', 'BBB = (011)_2', 'BBB = (100)_2', 'BBB = (101)_2', 'BBB = (110)_2', 'BBB = (111)_2', 'Location','eastoutside')
 savefig('fig/BGR_current_Xtemp_all-BBB.fig')
 exportgraphics(gcf,'pdf/BGR_current_Xtemp_all-BBB_40-30.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/BGR_current_Xtemp_all-BBB_40-30.eps','ContentType','vector');

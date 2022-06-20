@@ -4,6 +4,8 @@ f = figure('visible','off');
 
 clear; clc;
 plots = nan(1, 2);
+global_count = 1;
+INL = nan(255, 8);
 
 % linear regression for each curve
 disp("LINEAR REGRESSION MODEL: y = a + b * x")
@@ -61,23 +63,39 @@ for j = -40:10:30
 
     hold on
     plots(1, abs(j/10)+1) = plot(thr_mean(:, 1), thr_mean(:, 2)*1000);
-    title('Threshold Voltage vs DAC THR Code')
+    %title('Threshold Voltage vs DAC THR Code')
     xlabel("DAC THR code")
     ylabel("THR Voltage [mV]")
     xlim([0, 255])
 
     % Fit line to data using polyfit
-    c = polyfit(thr_mean(:, 1),thr_mean(:, 2)*1000,1);
+    c = polyfit(thr_mean(:, 1), thr_mean(:, 2)*1000, 1);
 
     % Display evaluated equation y = p0 + p1*x
     disp(['TEMP = ' num2str(j) ' °C, y = ' num2str(c(2)) ' + ' num2str(c(1)) ' * x'])
+
+    % INL/DNL analysis
+    %s = inldnl(thr_mean(:, 2),thr_mean(:, 1),[-1 1],'DAC','GenPlotData','on','INLMethod','All','DNLMethod','All')
+   
+    sum = 0;
+    for i = 2:length(thr_mean)
+        y = polyval(c, thr_mean(i, 1))
+        fprintf("%f - %f, difference: %f\n", thr_mean(i, 2)*1000, y, (thr_mean(i, 2)*1000-y));
+        delta = thr_mean(i, 2)*1000-y;
+        sum = sum + delta;
+        INL(i, global_count) = sum;
+    end
+    
+    global_count = global_count + 1;
 end
 
 box
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 legend('T = -40 °C', 'T = -30 °C', 'T = -20 °C', 'T = -10 °C', 'T = 0 °C', 'T = 10 °C', 'T = 20 °C', 'T = 30 °C')
 savefig('fig/DAC_thr_voltage_TEMP.fig')
 exportgraphics(gcf,'pdf/DAC_thr_voltage_TEMP.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/DAC_thr_voltage_TEMP.eps','ContentType','vector');
 
 
 %% DAC threshold voltage analysis [FTHR = 011, 2°C/step]
@@ -143,10 +161,13 @@ for j = -40:2:-30
 
     hold on
     plots(1, count) = plot(thr_mean(:, 1), thr_mean(:, 2)*1000);
-    title('Threshold Voltage vs DAC THR Code')
+    %title('Threshold Voltage vs DAC THR Code')
     xlabel("DAC THR code")
     ylabel("THR Voltage [mV]")
     xlim([0, 255])
+    set(gcf, 'Color', 'w');
+    set(gca,'fontname','Computer Modern') 
+    grid on
 
     % Fit line to data using polyfit
     c = polyfit(thr_mean(:, 1),thr_mean(:, 2)*1000,1);
@@ -159,7 +180,6 @@ box
 legend('T = -40 °C', 'T = -38 °C', 'T = -36 °C', 'T = -34 °C', 'T = -32 °C', 'T = -30 °C')
 savefig('fig/DAC_thr_voltage_40-30.fig')
 exportgraphics(gcf,'pdf/DAC_thr_voltage_40-30.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/DAC_thr_voltage_40-30.eps','ContentType','vector');
 
 
 %% DAC threshold voltage analysis [FTHR span @ -40°C]
@@ -219,10 +239,13 @@ for j = 0:7
     
     hold on
     plots(1, j+1) = plot(thr_mean(:, 1), thr_mean(:, 2)*1000);
-    title('Threshold Voltage vs DAC THR Code at -40 °C')
+    %title('Threshold Voltage vs DAC THR Code at -40 °C')
     xlabel("DAC THR code")
     ylabel("THR Voltage [mV]")
     xlim([0, 255])
+    set(gcf, 'Color', 'w');
+    set(gca,'fontname','Computer Modern') 
+    grid on
 
     % Fit line to data using polyfit
     c = polyfit(thr_mean(:, 1),thr_mean(:, 2)*1000,1);
@@ -235,4 +258,3 @@ box
 legend(plots, 'FTHR = (000)_2', 'FTHR = (001)_2', 'FTHR = (010)_2', 'FTHR = (011)_2', 'FTHR = (100)_2', 'FTHR = (101)_2', 'FTHR = (110)_2', 'FTHR = (111)_2')
 savefig('fig/DAC_thr_voltage_FTHR_-40C.fig')
 exportgraphics(gcf,'pdf/DAC_thr_voltage_FTHR_-40C.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/DAC_thr_voltage_FTHR_-40C.eps','ContentType','vector');

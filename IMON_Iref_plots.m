@@ -33,15 +33,18 @@ hold off
 
 
 text(-1,4,'4 keV','Color','red','FontSize',14)
-title('Reference current vs Bias setting')
+%title('Reference current vs Bias setting')
 xticklabels({'000', '001', '010', '011', '100', '101', '110', '111'})
 yticks([3.5:0.5:6])
 xlabel("Bias setting")
 ylabel("IMON/4 [\muA]")
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 legend('00', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', 'Location','southeast')
+
 savefig('fig/BGR_current_11ASIC_XBBB.fig')
 exportgraphics(gcf,'pdf/BGR_current_11ASIC_XBBB.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/BGR_current_11ASIC_XBBB.eps','ContentType','vector');
 
 
 %% Plot dei dati dopo il binning per le due sole configurazioni 101 e 110 [misure 11 ASIC]
@@ -52,10 +55,18 @@ hold on
 data_101 = SIM_ASIC_double(6, 3:end);
 plot_101 = histfit(data_101, 4)
 dist_101 = fitdist(data_101', "normal")
+set(plot_101(2), 'color', 'blue')
+set(plot_101(1),'FaceAlpha',.25);
+set(plot_101(2), 'LineWidth', 1);
+
 
 data_110 = SIM_ASIC_double(7, 3:end);
 plot_110 = histfit(data_110, 4)
 dist_110 = fitdist(data_110', "normal")
+set(plot_110(2), 'color', 'red')
+set(plot_110(1),'FaceColor', 'red');
+set(plot_110(1),'FaceAlpha',.25);
+set(plot_110(2), 'LineWidth', 1);
 hold off
 
 box
@@ -66,11 +77,13 @@ xticks([4.7:0.1:5.5])
 xticklabels([4.7:0.1:5.5])
 xlabel('Reference current [\muA]')
 ylabel('Entries')
-title({'Reference current values distribution', ' for BBB = (101)_2 and BBB = (110)_2'})
+%title({'Reference current values distribution', ' for BBB = (101)_2 and BBB = (110)_2'})
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 
 savefig('fig/BGR_current_101_110_binning.fig')
 exportgraphics(gcf,'pdf/BGR_current_101_110_binning.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/BGR_current_101_110_binning.eps','ContentType','vector');
 
 
 %% Plot della Iref misurata vs bit setting (BBB) ma per le diverse temperature
@@ -105,12 +118,15 @@ hold off
 
 box
 legend('Measured IMON/4', 'IMON/4 (TT)', 'IMON/4 (SS)', 'IMON/4 (FF)')
-title('Normalised reference current vs Temperature')
+%title('Normalised reference current vs Temperature')
 ylabel('Reference current [\muA]')
 xlabel("Temperature [°C]")
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
+
 savefig('fig/BGR_current_normal_IMON.fig')
 exportgraphics(gcf,'pdf/BGR_current_normal_IMON.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/BGR_current_normal_IMON.eps','ContentType','vector');
 
 
 %% Plot della Iref normalizzata (al valore a 0 °C) vs Temperatura. [Iref]
@@ -140,9 +156,12 @@ hold off
 
 box
 legend('Measured IMON/4', 'Iref (TT)', 'Iref (SS)', 'Iref (FF)')
-title('Normalised reference current vs Temperature')
+%title('Normalised reference current vs Temperature')
 ylabel('Reference current [\muA]')
 xlabel("Temperature [°C]")
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
+
 savefig('fig/BGR_current_normal_Iref.fig')
 exportgraphics(gcf,'pdf/BGR_current_normal_Iref.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/BGR_current_normal_Iref.eps','ContentType','vector');

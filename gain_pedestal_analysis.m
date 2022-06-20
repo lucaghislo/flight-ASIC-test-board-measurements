@@ -88,9 +88,11 @@ legend('Mean gain at temperature x', ['y = ' num2str(c(2)) ' + ' num2str(c(1)) '
 %filename = "low_energy_gain_530mV";
 filename = "high_energy_gain_530mV";
 
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 savefig(sprintf('fig/%s.fig', filename))
 exportgraphics(gcf, sprintf('pdf/%s.pdf', filename),'ContentType','vector');
-exportgraphics(gcf, sprintf('eps/%s.eps', filename),'ContentType','vector');
 hold off
 
 
@@ -162,7 +164,9 @@ legend('Mean pedestal at temperature x', ['y = ' num2str(c(2)) ' + ' num2str(c(1
 %filename = "low_energy_pedestal_530mV";
 filename = "high_energy_pedestal_530mV";
 
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 savefig(sprintf('fig/%s.fig', filename))
 exportgraphics(gcf, sprintf('pdf/%s.pdf', filename),'ContentType','vector');
-exportgraphics(gcf, sprintf('eps/%s.eps', filename),'ContentType','vector');
 hold off

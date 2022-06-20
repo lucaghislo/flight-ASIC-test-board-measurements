@@ -9,13 +9,15 @@ X_sim = [-40 -30 -20 -10 0 10 20 30];
 f = figure('visible','off');
 
 plot(X_temp, CSAVREFGM_011, '-o', X_sim, CSAVREFGM_sim, '-*')
-title("CSAVrefGM vs Temperature (H = 0, RRR = 011)");
+%title("CSAVrefGM vs Temperature (H = 0, RRR = 011)");
 xlabel('Temperature [°C]');
 ylabel('CSAVrefGM [mV]');
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 legend('CSAVrefGM (measured)', 'CSAVrefGM (simulated)', 'Location','northeast');
 savefig('fig/csavrefgm_temperature_0011.fig')
 exportgraphics(gcf,'pdf/csavrefgm_temperature_0011.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/csavrefgm_temperature_0011.eps','ContentType','vector');
 
 
 %% CSAVREFGM [mV] during testing vs temperature (H = 0, RRR = 111)
@@ -28,13 +30,15 @@ X_sim = [-40 -30 -20 -10 0 10 20 30];
 f = figure('visible','off');
 
 plot(X_temp, CSAVREFGM_111, '-o', X_sim, CSAVREFGM_sim, '-*')
-title("CSAVrefGM vs Temperature (H = 0, RRR = 111)");
+%title("CSAVrefGM vs Temperature (H = 0, RRR = 111)");
 xlabel('Temperature [°C]');
 ylabel('CSAVrefGM [mV]');
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 legend('CSAVrefGM (measured)', 'CSAVrefGM (simulated)', 'Location','northeast');
 savefig('fig/csavrefgm_temperature_0111.fig')
 exportgraphics(gcf,'pdf/csavrefgm_temperature_0111.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/csavrefgm_temperature_0111.eps','ContentType','vector');
 
 
 %% CSAVREFGM [HRRR = 0011] vs CSAVREFGM [HRRR = 0111] vs simulation
@@ -42,13 +46,15 @@ exportgraphics(gcf,'eps/csavrefgm_temperature_0111.eps','ContentType','vector');
 f = figure('visible','off');
 
 plot(X_temp, CSAVREFGM_011, '-o', X_temp, CSAVREFGM_111, '-o', X_sim, CSAVREFGM_sim, '-*')
-title("CSAVrefGM");
+%title("CSAVrefGM");
 xlabel('Temperature [°C]');
 ylabel('CSAVrefGM [mV]');
-legend('HRRR = (0011)_2', 'HRRR = (0111)_2', 'Simulated HRRR = (0011)_2', 'Location','northeast');
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
+legend('HRRR = $(0011)_2$', 'HRRR = $(0111)_{2}$', 'Simulated HRRR = $(0011)_{2}$', 'Location','northeast','Interpreter','latex');
 savefig('fig/csavrefgm_RRR_011_111.fig')
 exportgraphics(gcf,'pdf/csavrefgm_RRR_011_111.pdf','ContentType','vector')
-exportgraphics(gcf,'eps/csavrefgm_RRR_011_111.eps','ContentType','vector')
 
 
 %% CSAVREFGM [mV] during testing vs RRR bits configuration @ -40°C (H=0)
@@ -60,13 +66,15 @@ X = [1:1:8];
 f = figure('visible','off');
 
 plot(X, CSAVREFGM_H0, '-o')
-title("CSAVrefGM vs RRR bits configuration @ -40°C (bit H = 0)");
+%title("CSAVrefGM vs RRR bits configuration @ -40°C (bit H = 0)");
 xticklabels({'000', '001', '010', '011', '100', '101', '110', '111'})
 xlabel('RRR bits');
 ylabel('CSAVrefGM [mV]');
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 savefig('fig/csavrefgm_RRR_-40C_H0.fig')
 exportgraphics(gcf,'pdf/csavrefgm_RRR_-40C_H0.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/csavrefgm_RRR_-40C_H0.eps','ContentType','vector');
 
 
 %% CSAVREFGM [mV] during testing vs RRR bits configuration @ -40°C (H=1)
@@ -76,13 +84,15 @@ CSAVREFGM_H1 = [540.3 541.6 543.3 544.5 545.8 547.1 548.7 549.9]; % measured at 
 f = figure('visible','off');
 
 plot(X, CSAVREFGM_H1, '-o')
-title("CSAVrefGM vs RRR bits configuration @ -40°C (bit H = 0)");
+%title("CSAVrefGM vs RRR bits configuration @ -40°C (bit H = 0)");
 xticklabels({'000', '001', '010', '011', '100', '101', '110', '111'})
 xlabel('RRR bits');
 ylabel('CSAVrefGM [mV]');
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 savefig('fig/csavrefgm_RRR_-40C_H1.fig')
 exportgraphics(gcf,'pdf/csavrefgm_RRR_-40C_H1.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/csavrefgm_RRR_-40C_H1.eps','ContentType','vector');
 
 
 %% CSAVREFGM [mV] vs RRR bits @ -40°C (H=0 vs H=1)
@@ -90,11 +100,13 @@ exportgraphics(gcf,'eps/csavrefgm_RRR_-40C_H1.eps','ContentType','vector');
 f = figure('visible','off');
 
 plot(X, CSAVREFGM_H0, '-o', X, CSAVREFGM_H1, '-o')
-title("CSAVrefGM vs RRR bits configuration @ -40°C");
+%title("CSAVrefGM vs RRR bits configuration @ -40°C");
 xticklabels({'000', '001', '010', '011', '100', '101', '110', '111'})
 xlabel('RRR bits');
 ylabel('CSAVrefGM [mV]');
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
 legend('H = 0', 'H = 1','Location','southeast')
 savefig('fig/csavrefgm_RRR_-40C_H0H1.fig')
 exportgraphics(gcf,'pdf/csavrefgm_RRR_-40C_H0H1.pdf','ContentType','vector');
-exportgraphics(gcf,'eps/csavrefgm_RRR_-40C_H0H1.eps','ContentType','vector');
