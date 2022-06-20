@@ -41,7 +41,7 @@ ylabel("IMON/4 [\muA]")
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
-legend('00', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', 'Location','southeast')
+legend('00', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', 'Location','southeast','NumColumns',2)
 
 savefig('fig/BGR_current_11ASIC_XBBB.fig')
 exportgraphics(gcf,'pdf/BGR_current_11ASIC_XBBB.pdf','ContentType','vector');
