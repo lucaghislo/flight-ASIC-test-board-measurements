@@ -38,7 +38,7 @@ f = figure('visible','on');
 % Create and Plot Raw Data
 %x = [-40, -30, -20, -10, 0, 10, 20, 30]; % [10°C step]
 %x = [-40 -38 -36 -34 -32 -30]; % [2°C step]
-x = [-40 -38 -36 -34 -32 -30 -20 -10 0 10 20 30] % [all steps]
+x = [-40 -38 -36 -34 -32 -30 -20 -10 0 10 20 30]; % [all steps]
 
 %y = [0.9286 0.99537 1.0465 1.0977 1.1545 1.2305 1.2572 1.2898]; % HIGH GAIN (low energy) [10°C step, auto, 0011]
 %y = [0.011201 0.011490 0.011774 0.011989 0.012247 0.012501 0.012473 0.011799]; % LOW GAIN (high energy) [10°C step, auto, 0011]
@@ -74,7 +74,7 @@ plot(x,y_est,'r--','LineWidth',1.5)
 %title({'Gain in X-ray detection region (40-100 keV)', 'CSAVrefGM: auto [HRRR = (0011)_2]'});
 %title({'Gain in Muon detection region (40-55 MeV)', 'CSAVrefGM: auto [HRRR = (0011)_2]'});
 %title({'Gain in X-ray detection region (10-100 keV)', 'CSAVrefGM: 530mV'});
-title({'Gain in Muon detection region (40-55 MeV)', 'CSAVrefGM: 530mV'});
+%title({'Gain in Muon detection region (40-55 MeV)', 'CSAVrefGM: 530mV'});
 
 xlabel('Temperature [°C]');
 ylabel('Linear Gain [ADU/keV]');
@@ -101,7 +101,7 @@ hold off
 clc;
 % manually change temperature to get pedestal
 mean_ped_low_energy = mean(T_tab_30B_mean(1:11));
-mean_ped_high_energy = mean(T_tab_30B_mean(47:end))
+mean_ped_high_energy = mean(T_tab_30B_mean(47:end));
 
 
 %% PLOT PEDESTAL RESULTS
@@ -113,7 +113,7 @@ f = figure('visible','on');
 % Create and Plot Raw Data
 %x = [-40, -30, -20, -10, 0, 10, 20, 30]; % [10°C step]
 %x = [-40 -38 -36 -34 -32 -30]; % [2°C step]
-x = [-40 -38 -36 -34 -32 -30 -20 -10 0 10 20 30] % [all steps]
+x = [-40 -38 -36 -34 -32 -30 -20 -10 0 10 20 30]; % [all steps]
 
 % pedestal means
 %y = [150.4564 157.9231 164.8835 171.6629 178.3843 186.5613 192.7818 190.9261]; % HIGH GAIN (low energy) [10°C step, auto, 0011] 
@@ -150,7 +150,7 @@ plot(x,y_est,'r--','LineWidth',2)
 %title({'Pedestal in X-ray detection region (10-100 keV)', 'CSAVrefGM: auto [HRRR = (0011)_2]'});
 %title({'Pedestal in Muon detection region (40-55 MeV)', 'CSAVrefGM: auto [HRRR = (0011)_2]'});
 %title({'Pedestal in X-ray detection region (10-100 keV)', 'CSAVrefGM: 530mV'});
-title({'Pedestal in Muon detection region (40-55 MeV)', 'CSAVrefGM: 530mV'});
+%title({'Pedestal in Muon detection region (40-55 MeV)', 'CSAVrefGM: 530mV'});
 
 xlabel('Temperature [°C]');
 ylabel('Linear Gain [ADU/keV]');

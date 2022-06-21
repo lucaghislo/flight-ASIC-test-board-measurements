@@ -437,10 +437,11 @@ plot(X(1:55), T_tab_m40A_mean)
 xlabel('CAL\_Voltage [DAC\_inj Code]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 64000]);
+xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
-legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
+legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast', 'Title', 'Temperatures')
 
 savefig('fig/fdt_csavrefgm_auto_tau6_DAC_0011.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_auto_tau6_DAC_0011.pdf','ContentType','vector');
