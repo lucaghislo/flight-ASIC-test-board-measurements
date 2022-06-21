@@ -370,7 +370,9 @@ xlim([0, 64000]);
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
-legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
+[leg,att] = legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
+title(leg,'Temperature')
+leg.Title.Visible = 'on';
 
 savefig(sprintf('fig/errbar_fdt_csavrefgm_auto_tau%d_DAC_0011.fig', tau))
 exportgraphics(gcf, sprintf('pdf/errbar_fdt_csavrefgm_auto_tau%d_DAC_0011.pdf', tau),'ContentType','vector');
@@ -441,7 +443,7 @@ xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
-legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast', 'Title', 'Temperatures')
+legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
 
 savefig('fig/fdt_csavrefgm_auto_tau6_DAC_0011.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_auto_tau6_DAC_0011.pdf','ContentType','vector');
@@ -473,6 +475,7 @@ plot(X(1:55), T_tab_m40C_mean)
 xlabel('CAL\_Voltage [DAC\_inj Code]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 64000]);
+xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
@@ -543,6 +546,7 @@ plot(X(1:55), T_tab_m40B_mean)
 xlabel('CAL\_Voltage [DAC\_inj Code]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 64000]);
+xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
@@ -784,6 +788,7 @@ box
 xlabel('CAL\_Voltage [DAC\_inj Code]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 64000]);
+xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
@@ -815,6 +820,7 @@ box
 xlabel('CAL\_Voltage [DAC\_inj Code]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 64000]);
+xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
@@ -846,6 +852,7 @@ box
 xlabel('CAL\_Voltage [DAC\_inj Code]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 64000]);
+xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
@@ -888,6 +895,7 @@ box
 xlabel('CAL\_Voltage [DAC\_inj Code]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 64000]);
+xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
@@ -929,6 +937,7 @@ box
 xlabel('CAL\_Voltage [DAC\_inj Code]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 64000]);
+xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
@@ -966,6 +975,7 @@ box
 xlabel('CAL\_Voltage [DAC\_inj Code]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 64000]);
+xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
@@ -1002,6 +1012,7 @@ legend([p1A, p1B], 'CSAVrefGM = auto [HRRR = (0011)_2]', 'CSAVrefGM = auto [HRRR
 xlabel('CAL\_Voltage [DAC\_inj Code]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 64000]);
+xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
