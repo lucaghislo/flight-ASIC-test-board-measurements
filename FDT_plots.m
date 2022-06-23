@@ -367,6 +367,7 @@ box
 xlabel('CAL\_Voltage [DAC\_inj Code]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 64000]);
+xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
@@ -404,6 +405,7 @@ errorbar(X(1:55), T_tab_m40C_mean, T_tab_m40C_std)
 xlabel('CAL\_Voltage [DAC\_inj Code]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 64000]);
+xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
@@ -511,6 +513,7 @@ errorbar(X(1:55), T_tab_m40B_mean, T_tab_m40B_std)
 xlabel('CAL\_Voltage [DAC\_inj Code]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 64000]);
+xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
@@ -582,6 +585,8 @@ errorbar(X_keV(1:55), T_tab_m40A_mean, T_tab_m40A_std)
 xlabel('Incoming energy [keV]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 53824]);
+xticks([0:10000:50000])
+xticklabels([0:10:50])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
@@ -617,6 +622,8 @@ errorbar(X_keV(1:55), T_tab_m40C_mean, T_tab_m40C_std)
 xlabel('Incoming energy [keV]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 53824]);
+xticks([0:10000:50000])
+xticklabels([0:10:50])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
@@ -649,9 +656,11 @@ hold on;
 plot(X_keV(1:55), T_tab_m40A_mean)
 
 %title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM auto [HRRR = (0011)_2]']);
-xlabel('Incoming energy [keV]');
+xlabel('Incoming energy [MeV]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 53824]);
+xticks([0:10000:50000])
+xticklabels([0:10:50])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
@@ -684,9 +693,11 @@ hold on;
 plot(X_keV(1:55), T_tab_m40C_mean)
 
 %title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM auto [HRRR = (0111)_2]']);
-xlabel('Incoming energy [keV]');
+xlabel('Incoming energy [MeV]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 53824]);
+xticks([0:10000:50000])
+xticklabels([0:10:50])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
@@ -722,6 +733,8 @@ errorbar(X_keV(1:55), T_tab_m40B_mean, T_tab_m40B_std)
 xlabel('Incoming energy [keV]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 53824]);
+xticks([0:10000:50000])
+xticklabels([0:10:50])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
@@ -754,9 +767,11 @@ hold on;
 plot(X_keV(1:55), T_tab_m40B_mean)
 
 %title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM fixed @ 530mV']);
-xlabel('Incoming energy [keV]');
+xlabel('Incoming energy [MeV]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 53824]);
+xticks([0:10000:50000])
+xticklabels([0:10:50])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
@@ -1039,9 +1054,11 @@ plot(X_keV(1:55), T_tab_m40A_mean)
 
 box
 %title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM auto [HRRR = (0011)_2]']);
-xlabel('Incoming energy [keV]');
+xlabel('Incoming energy [MeV]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 53824]);
+xticks([0:10000:50000])
+xticklabels([0:10:50])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
@@ -1069,9 +1086,11 @@ plot(X_keV(1:55), T_tab_m40C_mean)
 
 box
 %title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM auto [HRRR = (0111)_2]']);
-xlabel('Incoming energy [keV]');
+xlabel('Incoming energy [MeV]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 53824]);
+xticks([0:10000:50000])
+xticklabels([0:10:50])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
@@ -1099,9 +1118,11 @@ plot(X_keV(1:55), T_tab_m40B_mean)
 
 box
 %title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM fixed @ 530mV']);
-xlabel('Incoming energy [keV]');
+xlabel('Incoming energy [MeV]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 53824]);
+xticks([0:10000:50000])
+xticklabels([0:10:50])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
