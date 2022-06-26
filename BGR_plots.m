@@ -20,8 +20,8 @@ BGR_current_m40C = ((D.("-40C")/BGR_R)/BGR_gain)*1000
 
 hold on
 plot(X, BGR_current_30C, '-o', X, BGR_current_20C, '-o', X, BGR_current_10C, '-o', X, BGR_current_0C, '-o', X, BGR_current_m10C, '-o', X, BGR_current_m20C, '-o', X, BGR_current_m30C, '-o', X, BGR_current_m40C, '-o')
-plot([1:8], [5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 1, 'Color', 'red')
-text(8.1, 5, '5μA', 'Color', 'red')
+plot([1:8], [5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 0.8, 'Color', 'red')
+text(8.1, 5.01, '5μA', 'Color', 'red','FontName','Computer Modern')
 hold off
 
 %title('Reference current vs Bias setting')
@@ -60,8 +60,8 @@ BGR_current_27C_meas = SIM_double(:, 6)
 
 hold on
 plot(X, BGR_current_30C, '-o', X, BGR_current_27C_meas, '-+', X, BGR_current_27C_sim_FF, '-*', X, BGR_current_27C_sim_TT, '-*', X, BGR_current_27C_sim_SS, '-*')
-plot([1:8], [5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 1, 'Color', 'red')
-text(8.1, 5, '5μA', 'Color', 'red')
+plot([1:8], [5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 0.8, 'Color', 'red')
+text(8.1, 5.01, '5μA', 'Color', 'red','FontName','Computer Modern')
 hold off
 
 box
@@ -123,8 +123,8 @@ for i=1:8
     plot([-40 -38 -36 -34 -32 -30 -20 -10 0 10 20 30], BGR_tot(i, :), '-o', 'LineStyle','--')
     %plot([-40 -30 -20 -10 0 10 20 30], BGR_tot(i, :), '-o', 'LineStyle','--')
 
-    plot([-50:10:40], [5 5 5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 1, 'Color', 'red')
-    text(41, 5, '5μA', 'Color', 'red')
+    plot([-50:10:40], [5 5 5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 0.8, 'Color', 'red')
+    text(41, 5.01, '5μA', 'Color', 'red','FontName','Computer Modern')
     
     xlim([-50 40])
     xticks([-100 -80 -60 -40 -30 -20 -10 0 10 20 30])
@@ -136,7 +136,7 @@ for i=1:8
     set(gcf, 'Color', 'w');
     set(gca,'fontname','Computer Modern') 
     grid on
-    legend('TT (simulated)', 'FF (simulated)', 'SS (simulated)', sprintf('BBB = $(%s)_2$', bits(i)), 'Location','northeastoutside')
+    legend('TT (simulated)', 'FF (simulated)', 'SS (simulated)', sprintf('BBB = (%s)_2', bits(i)), 'Location','northeastoutside')
     savefig(sprintf('fig/BGR_current_Xtemp_%s.fig', bits(i)))
     exportgraphics(gcf,sprintf('pdf/BGR_current_Xtemp_%s.pdf',bits(i)),'ContentType','vector');
 end
@@ -177,8 +177,8 @@ for i=1:8
     hold on
     %plot([-40 -30 -20 -10 0 10 20 30], BGR_tot(i, :), '-o', 'LineStyle','--')
     plot([-40 -38 -36 -34 -32 -30 -20 -10 0 10 20 30], BGR_tot(i, :), '-o', 'LineStyle','--')
-    plot([-50:10:40], [5 5 5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 1, 'Color', 'red')
-    text(41, 5, '5μA', 'Color', 'red')
+    plot([-50:10:40], [5 5 5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 0.8, 'Color', 'red')
+    text(41, 5.01, '5μA', 'Color', 'red','FontName','Computer Modern')
 
     xlim([-50 40])
     xticks([-100 -80 -60 -40 -30 -20 -10 0 10 20 30])
@@ -188,7 +188,7 @@ for i=1:8
     set(gcf, 'Color', 'w');
     set(gca,'fontname','Computer Modern') 
     grid on
-    legend('TT (simulated)', sprintf('BBB = $(%s)_2$', bits(i)), 'Location','eastoutside')
+    legend('TT (simulated)', sprintf('BBB = (%s)_2', bits(i)), 'Location','eastoutside')
     savefig(sprintf('fig/BGR_current_Xtemp_%s_TT.fig', bits(i)))
     exportgraphics(gcf,sprintf('pdf/BGR_current_Xtemp_%s_TT.pdf',bits(i)),'ContentType','vector');
 end
@@ -239,8 +239,8 @@ for i=1:8
     %plot([-40 -38 -36 -34 -32 -30 -20 -10 0 10 20 30], BGR_tot(i, :), '-o')
     plot([-40 -30 -20 -10 0 10 20 30], BGR_tot(i, :), '-o')
 end
-plot([-50:10:40], [5 5 5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 1, 'Color', 'red')
-text(32, 4.9, '5μA', 'Color', 'red')
+plot([-50:10:40], [5 5 5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 0.8, 'Color', 'red')
+text(32.5, 4.95, '5μA', 'Color', 'red','FontName','Computer Modern')
 hold off
 
 xlim([-50 40])
@@ -248,7 +248,7 @@ xticks([ -40 -30 -20 -10 0 10 20 30])
 xticklabels([ -40 -30 -20 -10 0 10 20 30])
 %title('Reference current vs Temperature')
 xlabel("Temperature [°C]")
-ylabel("Reference current [$μ A$]", 'Interpreter','latex')
+ylabel("Reference current [μA]", 'Interpreter','latex')
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
@@ -276,8 +276,8 @@ BGR_current_m40C = ((D.("-40C")/BGR_R)/BGR_gain)*1000
 
 hold on
 plot(X, BGR_current_m30C, '-o', X, BGR_current_m32C, '-o', X, BGR_current_m34C, '-o', X, BGR_current_m36C, '-o', X, BGR_current_m38C, '-o', X, BGR_current_m40C, '-o')
-plot([1:8], [5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 1, 'Color', 'red')
-text(8.1, 5, '5μA', 'Color', 'red')
+plot([1:8], [5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 0.8, 'Color', 'red')
+text(8.1, 5.01, '5μA', 'Color', 'red','FontName','Computer Modern')
 hold off
 box
 %title('Reference current vs Bias setting')
@@ -328,8 +328,8 @@ for i=1:8
     hold on
     plot([-40 -38 -36 -34 -32 -30], BGR_tot(i, :), '-o')
 end
-plot([-50:10:40], [5 5 5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 1, 'Color', 'red')
-text(-29.4, 4.95, '5μA', 'Color', 'red')
+plot([-50:10:40], [5 5 5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 0.8, 'Color', 'red')
+text(-29.4, 4.95, '5μA', 'Color', 'red','FontName','Computer Modern')
 hold off
 box
 xlim([-42 -28])
