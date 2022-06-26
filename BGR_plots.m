@@ -25,15 +25,15 @@ BGR_current_m40C = ((D.("-40C")/BGR_R)/BGR_gain)*1000
 hold on
 plot(X, BGR_current_30C, '-o', X, BGR_current_20C, '-o', X, BGR_current_10C, '-o', X, BGR_current_0C, '-o', X, BGR_current_m10C, '-o', X, BGR_current_m20C, '-o', X, BGR_current_m30C, '-o', X, BGR_current_m40C, '-o')
 plot([1:8], [5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 1, 'Color', 'red')
-text(8.1, 5, '$5\mu A$', 'Color', 'red')
+text(8.1, 5, '5\muA', 'Color', 'red')
 hold off
 
 %title('Reference current vs Bias setting')
 xticklabels({'000', '001', '010', '011', '100', '101', '110', '111'})
 yticks([3.5:0.5:5.5])
 xlabel("Bias setting")
-ylabel("Reference current [$\mu A$]")
-legend('T = \SI{-30}{\celsius}', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast', 'NumColumns', 2)
+ylabel("Reference current [\muA]")
+legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast', 'NumColumns', 2)
 box
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 

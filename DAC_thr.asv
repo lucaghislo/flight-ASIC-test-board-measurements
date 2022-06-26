@@ -7,7 +7,6 @@ plots = nan(1, 2);
 global_count = 1;
 DNL = nan(255, 8);
 INL = nan(255, 8);
-LSB_step = 1.2;
 
 % linear regression for each curve
 disp("LINEAR REGRESSION MODEL: y = a + b * x")
@@ -80,7 +79,7 @@ for j = -40:10:30
     %s = inldnl(thr_mean(:, 2),thr_mean(:, 1),[-1 1],'DAC','GenPlotData','on','INLMethod','All','DNLMethod','All')
    
     sum = 0;
-    for i = 1:length(thr_mean)-1
+    for i = 2:length(thr_mean)
         y = polyval(c, thr_mean(i, 1))
         fprintf("%f - %f, difference: %f\n", thr_mean(i, 2)*1000, y, (thr_mean(i, 2)*1000-y));
 
@@ -88,7 +87,7 @@ for j = -40:10:30
         %sum = sum + delta;
         %DNL(i, global_count) = sum;
         
-        DNL(i, global_count) =  (((thr_mean(i+1, 2)*1000) - (thr_mean(i, 2)*1000))/LSB_step) - 1;
+        DNL(i, )
 
         INL(i, global_count) = nansum(DNL(:, global_count)); %#ok<NANSUM> 
     end
@@ -114,18 +113,18 @@ for i=1:8
     plot(thr_mean(:, 1), DNL(:, i))
 end
 
-%plot([0:255], zeros(1, 256), 'LineStyle','-.', 'LineWidth', 0.8, 'Color', 'red')
-%text(235, 0.6, '0 mV', 'Color', 'red')
+plot([0:255], zeros(1, 256), 'LineStyle','-.', 'LineWidth', 0.8, 'Color', 'red')
+text(235, 0.6, '0 mV', 'Color', 'red')
 hold off
 
 box
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 xlim([0 255])
-ylabel("Differential Non-Linearity (DNL) [LSB]")
+ylabel("Differential Non-Linearity (DNL) [mV]")
 xlabel('DAC THR code')
 grid on
-legend('T = -40 °C', 'T = -30 °C', 'T = -20 °C', 'T = -10 °C', 'T = 0 °C', 'T = 10 °C', 'T = 20 °C', 'T = 30 °C', 'Location', 'southeast', 'NumColumns', 2)
+legend('T = -40 °C', 'T = -30 °C', 'T = -20 °C', 'T = -10 °C', 'T = 0 °C', 'T = 10 °C', 'T = 20 °C', 'T = 30 °C', 'Location', 'southwest', 'NumColumns', 2)
 savefig('fig/DAC_DNL.fig')
 exportgraphics(gcf,'pdf/DAC_DNL.pdf','ContentType','vector');
 
@@ -144,10 +143,10 @@ box
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 xlim([0 255])
-ylabel("Integral Non-Linearity (INL) [LSB]")
+ylabel("Integral Non-Linearity (INL) [mV]")
 xlabel('DAC THR code')
 grid on
-legend('T = -40 °C', 'T = -30 °C', 'T = -20 °C', 'T = -10 °C', 'T = 0 °C', 'T = 10 °C', 'T = 20 °C', 'T = 30 °C', 'Location', 'southwest', 'NumColumns', 2)
+legend('T = -40 °C', 'T = -30 °C', 'T = -20 °C', 'T = -10 °C', 'T = 0 °C', 'T = 10 °C', 'T = 20 °C', 'T = 30 °C', 'Location', 'northwest')
 savefig('fig/DAC_INL.fig')
 exportgraphics(gcf,'pdf/DAC_INL.pdf','ContentType','vector');
 
