@@ -28,7 +28,7 @@ end
 
 % retta a 5uA per indicare valore di riferimento
 plot([1:8], [5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 1, 'Color', 'red')
-text(8.1, 5, '5\muA', 'Color', 'red')
+text(8.1, 5, '5μA', 'Color', 'red')
 hold off
 
 
@@ -37,7 +37,7 @@ text(-1,4,'4 keV','Color','red','FontSize',14)
 xticklabels({'000', '001', '010', '011', '100', '101', '110', '111'})
 yticks([3.5:0.5:6])
 xlabel("Bias setting")
-ylabel("IMON/4 [\muA]")
+ylabel("IMON/4 [μA]")
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
@@ -70,12 +70,12 @@ set(plot_110(2), 'LineWidth', 1);
 hold off
 
 box
-legend(['BBB = (101)_2, \mu = ', sprintf('%.3f', dist_101.mu), '\muA'], '', ['BBB = (110)_2, \mu = ', sprintf('%.3f', dist_110.mu), '\muA'])
+legend(['BBB = (101)_2, μ = ', sprintf('%.3f', dist_101.mu), 'μA'], '', ['BBB = (110)_2, μ = ', sprintf('%.3f', dist_110.mu), 'μA'])
 ylim([0, 7])
 xlim([4.7 5.5])
 xticks([4.7:0.1:5.5])
 xticklabels([4.7:0.1:5.5])
-xlabel('Reference current [\muA]')
+xlabel('Reference current [μA]')
 ylabel('Entries')
 %title({'Reference current values distribution', ' for BBB = (101)_2 and BBB = (110)_2'})
 set(gcf, 'Color', 'w');
@@ -119,7 +119,7 @@ hold off
 box
 legend('Measured IMON/4', 'IMON/4 (TT)', 'IMON/4 (SS)', 'IMON/4 (FF)')
 %title('Normalised reference current vs Temperature')
-ylabel('Reference current [\muA]')
+ylabel('Reference current [μA]')
 xlabel("Temperature [°C]")
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
@@ -157,7 +157,7 @@ hold off
 box
 legend('Measured IMON/4', 'Iref (TT)', 'Iref (SS)', 'Iref (FF)')
 %title('Normalised reference current vs Temperature')
-ylabel('Reference current [\muA]')
+ylabel('Reference current [μA]')
 xlabel("Temperature [°C]")
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 

@@ -1,7 +1,3 @@
-set(groot,'defaulttextinterpreter','latex');  
-set(groot, 'defaultAxesTickLabelInterpreter','latex');  
-set(groot, 'defaultLegendInterpreter','latex');
-
 %% BGR current vs BBB bits (variating temperature)
 
 f = figure('visible','off');
@@ -25,14 +21,14 @@ BGR_current_m40C = ((D.("-40C")/BGR_R)/BGR_gain)*1000
 hold on
 plot(X, BGR_current_30C, '-o', X, BGR_current_20C, '-o', X, BGR_current_10C, '-o', X, BGR_current_0C, '-o', X, BGR_current_m10C, '-o', X, BGR_current_m20C, '-o', X, BGR_current_m30C, '-o', X, BGR_current_m40C, '-o')
 plot([1:8], [5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 1, 'Color', 'red')
-text(8.1, 5, '5\muA', 'Color', 'red')
+text(8.1, 5, '5μA', 'Color', 'red')
 hold off
 
 %title('Reference current vs Bias setting')
 xticklabels({'000', '001', '010', '011', '100', '101', '110', '111'})
 yticks([3.5:0.5:5.5])
 xlabel("Bias setting")
-ylabel("Reference current [\muA]")
+ylabel("Reference current [μA]")
 legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast', 'NumColumns', 2)
 box
 set(gcf, 'Color', 'w');
@@ -65,7 +61,7 @@ BGR_current_27C_meas = SIM_double(:, 6)
 hold on
 plot(X, BGR_current_30C, '-o', X, BGR_current_27C_meas, '-+', X, BGR_current_27C_sim_FF, '-*', X, BGR_current_27C_sim_TT, '-*', X, BGR_current_27C_sim_SS, '-*')
 plot([1:8], [5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 1, 'Color', 'red')
-text(8.1, 5, '5\muA', 'Color', 'red')
+text(8.1, 5, '5μA', 'Color', 'red')
 hold off
 
 box
@@ -73,7 +69,7 @@ box
 xticklabels({'000', '001', '010', '011', '100', '101', '110', '111'})
 %yticks([3.5:0.1:5.5])
 xlabel("Bias setting")
-ylabel("Reference current [\muA]")
+ylabel("Reference current [μA]")
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
@@ -128,7 +124,7 @@ for i=1:8
     %plot([-40 -30 -20 -10 0 10 20 30], BGR_tot(i, :), '-o', 'LineStyle','--')
 
     plot([-50:10:40], [5 5 5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 1, 'Color', 'red')
-    text(41, 5, '5\muA', 'Color', 'red')
+    text(41, 5, '5μA', 'Color', 'red')
     
     xlim([-50 40])
     xticks([-100 -80 -60 -40 -30 -20 -10 0 10 20 30])
@@ -136,11 +132,11 @@ for i=1:8
     yticks([3.5:0.5:6.5])
     %title(['Reference current vs Temperature'])
     xlabel("Temperature [°C]")
-    ylabel("Reference current [\muA]")
+    ylabel("Reference current [μA]")
     set(gcf, 'Color', 'w');
     set(gca,'fontname','Computer Modern') 
     grid on
-    legend('TT (simulated)', 'FF (simulated)', 'SS (simulated)', sprintf('BBB = (%s)_{2}', bits(i)), 'Location','northeastoutside')
+    legend('TT (simulated)', 'FF (simulated)', 'SS (simulated)', sprintf('BBB = $(%s)_2$', bits(i)), 'Location','northeastoutside')
     savefig(sprintf('fig/BGR_current_Xtemp_%s.fig', bits(i)))
     exportgraphics(gcf,sprintf('pdf/BGR_current_Xtemp_%s.pdf',bits(i)),'ContentType','vector');
 end
@@ -182,17 +178,17 @@ for i=1:8
     %plot([-40 -30 -20 -10 0 10 20 30], BGR_tot(i, :), '-o', 'LineStyle','--')
     plot([-40 -38 -36 -34 -32 -30 -20 -10 0 10 20 30], BGR_tot(i, :), '-o', 'LineStyle','--')
     plot([-50:10:40], [5 5 5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 1, 'Color', 'red')
-    text(41, 5, '5\muA', 'Color', 'red')
+    text(41, 5, '5μA', 'Color', 'red')
 
     xlim([-50 40])
     xticks([-100 -80 -60 -40 -30 -20 -10 0 10 20 30])
     %title(['Reference current vs Temperature'])
     xlabel("Temperature [°C]")
-    ylabel("Reference current [\muA]")
+    ylabel("Reference current [μA]")
     set(gcf, 'Color', 'w');
     set(gca,'fontname','Computer Modern') 
     grid on
-    legend('TT (simulated)', sprintf('BBB = (%s)_{2}', bits(i)), 'Location','eastoutside')
+    legend('TT (simulated)', sprintf('BBB = $(%s)_2$', bits(i)), 'Location','eastoutside')
     savefig(sprintf('fig/BGR_current_Xtemp_%s_TT.fig', bits(i)))
     exportgraphics(gcf,sprintf('pdf/BGR_current_Xtemp_%s_TT.pdf',bits(i)),'ContentType','vector');
 end
@@ -244,7 +240,7 @@ for i=1:8
     plot([-40 -30 -20 -10 0 10 20 30], BGR_tot(i, :), '-o')
 end
 plot([-50:10:40], [5 5 5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 1, 'Color', 'red')
-text(32, 4.9, '5\muA', 'Color', 'red')
+text(32, 4.9, '5μA', 'Color', 'red')
 hold off
 
 xlim([-50 40])
@@ -252,7 +248,7 @@ xticks([ -40 -30 -20 -10 0 10 20 30])
 xticklabels([ -40 -30 -20 -10 0 10 20 30])
 %title('Reference current vs Temperature')
 xlabel("Temperature [°C]")
-ylabel("Reference current [$\mu A$]", 'Interpreter','latex')
+ylabel("Reference current [$μ A$]", 'Interpreter','latex')
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
@@ -281,13 +277,13 @@ BGR_current_m40C = ((D.("-40C")/BGR_R)/BGR_gain)*1000
 hold on
 plot(X, BGR_current_m30C, '-o', X, BGR_current_m32C, '-o', X, BGR_current_m34C, '-o', X, BGR_current_m36C, '-o', X, BGR_current_m38C, '-o', X, BGR_current_m40C, '-o')
 plot([1:8], [5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 1, 'Color', 'red')
-text(8.1, 5, '5\muA', 'Color', 'red')
+text(8.1, 5, '5μA', 'Color', 'red')
 hold off
 box
 %title('Reference current vs Bias setting')
 xticklabels({'000', '001', '010', '011', '100', '101', '110', '111'})
 xlabel("Bias setting")
-ylabel("Reference current [\muA]")
+ylabel("Reference current [μA]")
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
@@ -333,7 +329,7 @@ for i=1:8
     plot([-40 -38 -36 -34 -32 -30], BGR_tot(i, :), '-o')
 end
 plot([-50:10:40], [5 5 5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 1, 'Color', 'red')
-text(-29.4, 4.95, '5\muA', 'Color', 'red')
+text(-29.4, 4.95, '5μA', 'Color', 'red')
 hold off
 box
 xlim([-42 -28])
@@ -341,7 +337,7 @@ xticks([-40 -38 -36 -34 -32 -30 -28 -26 -24])
 xticklabels([-40 -38 -36 -34 -32 -30])
 %title('Reference current vs Temperature')
 xlabel("Temperature [°C]")
-ylabel("Reference current [\muA]")
+ylabel("Reference current [μA]")
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
