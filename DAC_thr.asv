@@ -85,8 +85,7 @@ for j = -40:10:30
         fprintf("%f - %f, difference: %f\n", thr_mean(i, 2)*1000, y, (thr_mean(i, 2)*1000-y));
         
         DNL(i, global_count) =  (((thr_mean(i+1, 2)*1000) - (thr_mean(i, 2)*1000))/LSB_step) - 1;
-        %INL(i, global_count) = nansum(DNL(:, global_count)); %#ok<NANSUM>
-        INL(i, global_count) = (y - thr_mean(i, 2));
+        INL(i, global_count) = nansum(DNL(:, global_count)); %#ok<NANSUM> 
     end
     
     global_count = global_count + 1;
