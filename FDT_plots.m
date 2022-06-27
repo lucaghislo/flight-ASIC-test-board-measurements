@@ -371,7 +371,7 @@ xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
-[leg,att] = legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
+[leg,att] = legend('T = $30^{\circ}$C', 'T = $20^{\circ}$C', 'T = $10^{\circ}$C', 'T = $0^{\circ}$C', 'T = $-10^{\circ}$C', 'T = $-20^{\circ}$C', 'T = $-30^{\circ}$C', 'T = $-40^{\circ}$C', 'Location','southeast')
 title(leg,'Temperature')
 leg.Title.Visible = 'on';
 
@@ -409,7 +409,7 @@ xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
-legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
+legend('T = $30^{\circ}$C', 'T = $20^{\circ}$C', 'T = $10^{\circ}$C', 'T = $0^{\circ}$C', 'T = $-10^{\circ}$C', 'T = $-20^{\circ}$C', 'T = $-30^{\circ}$C', 'T = $-40^{\circ}$C', 'Location','southeast')
 
 savefig(sprintf('fig/errbar_fdt_csavrefgm_auto_tau%d_DAC_0111.fig', tau))
 exportgraphics(gcf, sprintf('pdf/errbar_fdt_csavrefgm_auto_tau%d_DAC_0111.pdf', tau),'ContentType','vector');
@@ -445,7 +445,7 @@ xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
-legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
+legend('T = $30^{\circ}$C', 'T = $20^{\circ}$C', 'T = $10^{\circ}$C', 'T = $0^{\circ}$C', 'T = $-10^{\circ}$C', 'T = $-20^{\circ}$C', 'T = $-30^{\circ}$C', 'T = $-40^{\circ}$C', 'Location','southeast')
 
 savefig('fig/fdt_csavrefgm_auto_tau6_DAC_0011.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_auto_tau6_DAC_0011.pdf','ContentType','vector');
@@ -481,7 +481,7 @@ xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
-legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
+legend('T = $30^{\circ}$C', 'T = $20^{\circ}$C', 'T = $10^{\circ}$C', 'T = $0^{\circ}$C', 'T = $-10^{\circ}$C', 'T = $-20^{\circ}$C', 'T = $-30^{\circ}$C', 'T = $-40^{\circ}$C', 'Location','southeast')
 
 savefig('fig/fdt_csavrefgm_auto_tau6_DAC_0111.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_auto_tau6_DAC_0111.pdf','ContentType','vector');
@@ -517,7 +517,7 @@ xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
-legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
+legend('T = $30^{\circ}$C', 'T = $20^{\circ}$C', 'T = $10^{\circ}$C', 'T = $0^{\circ}$C', 'T = $-10^{\circ}$C', 'T = $-20^{\circ}$C', 'T = $-30^{\circ}$C', 'T = $-40^{\circ}$C', 'Location','southeast')
 
 savefig('fig/errbar_fdt_csavrefgm_530mV_tau6_DAC.fig')
 exportgraphics(gcf,'pdf/errbar_fdt_csavrefgm_530mV_tau6_DAC.pdf','ContentType','vector');
@@ -553,7 +553,7 @@ xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
-legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
+legend('T = $30^{\circ}$C', 'T = $20^{\circ}$C', 'T = $10^{\circ}$C', 'T = $0^{\circ}$C', 'T = $-10^{\circ}$C', 'T = $-20^{\circ}$C', 'T = $-30^{\circ}$C', 'T = $-40^{\circ}$C', 'Location','southeast')
 
 savefig('fig/fdt_csavrefgm_530mV_tau6_DAC.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_530mV_tau6_DAC.pdf','ContentType','vector');
@@ -590,7 +590,7 @@ xticklabels([0:10:50])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
-legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
+legend('T = $30^{\circ}$C', 'T = $20^{\circ}$C', 'T = $10^{\circ}$C', 'T = $0^{\circ}$C', 'T = $-10^{\circ}$C', 'T = $-20^{\circ}$C', 'T = $-30^{\circ}$C', 'T = $-40^{\circ}$C', 'Location','southeast')
 
 savefig('fig/errbar_fdt_csavrefgm_auto_tau6_keV_0011.fig')
 exportgraphics(gcf,'pdf/errbar_fdt_csavrefgm_auto_tau6_keV_0011.pdf','ContentType','vector');
@@ -627,7 +627,7 @@ xticklabels([0:10:50])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
-legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
+legend('T = $30^{\circ}$C', 'T = $20^{\circ}$C', 'T = $10^{\circ}$C', 'T = $0^{\circ}$C', 'T = $-10^{\circ}$C', 'T = $-20^{\circ}$C', 'T = $-30^{\circ}$C', 'T = $-40^{\circ}$C', 'Location','southeast')
 
 savefig('fig/errbar_fdt_csavrefgm_auto_tau6_keV_0111.fig')
 exportgraphics(gcf,'pdf/errbar_fdt_csavrefgm_auto_tau6_keV_0111.pdf','ContentType','vector');
@@ -664,7 +664,7 @@ xticklabels([0:10:50])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
-legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
+legend('T = $30^{\circ}$C', 'T = $20^{\circ}$C', 'T = $10^{\circ}$C', 'T = $0^{\circ}$C', 'T = $-10^{\circ}$C', 'T = $-20^{\circ}$C', 'T = $-30^{\circ}$C', 'T = $-40^{\circ}$C', 'Location','southeast')
 
 savefig('fig/fdt_csavrefgm_auto_tau6_keV_0011.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_auto_tau6_keV_0011.pdf','ContentType','vector');
@@ -701,7 +701,7 @@ xticklabels([0:10:50])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
-legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
+legend('T = $30^{\circ}$C', 'T = $20^{\circ}$C', 'T = $10^{\circ}$C', 'T = $0^{\circ}$C', 'T = $-10^{\circ}$C', 'T = $-20^{\circ}$C', 'T = $-30^{\circ}$C', 'T = $-40^{\circ}$C', 'Location','southeast')
 
 savefig('fig/fdt_csavrefgm_auto_tau6_keV_0111.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_auto_tau6_keV_0111.pdf','ContentType','vector');
@@ -730,7 +730,7 @@ hold on;
 errorbar(X_keV(1:55), T_tab_m40B_mean, T_tab_m40B_std)
 
 %title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM fixed @ 530mV']);
-xlabel('Incoming energy [keV]');
+xlabel('Incoming energy [MeV]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 53824]);
 xticks([0:10000:50000])
@@ -738,7 +738,7 @@ xticklabels([0:10:50])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
-legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
+legend('T = $30^{\circ}$C', 'T = $20^{\circ}$C', 'T = $10^{\circ}$C', 'T = $0^{\circ}$C', 'T = $-10^{\circ}$C', 'T = $-20^{\circ}$C', 'T = $-30^{\circ}$C', 'T = $-40^{\circ}$C', 'Location','southeast')
 
 savefig('fig/errbar_fdt_csavrefgm_530mV_tau6_keV.fig')
 exportgraphics(gcf,'pdf/errbar_fdt_csavrefgm_530mV_tau6_keV.pdf','ContentType','vector');
@@ -775,7 +775,7 @@ xticklabels([0:10:50])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
-legend('T = 30°C', 'T = 20°C', 'T = 10°C', 'T = 0°C', 'T = -10°C', 'T = -20°C', 'T = -30°C', 'T = -40°C', 'Location','southeast')
+legend('T = $30^{\circ}$C', 'T = $20^{\circ}$C', 'T = $10^{\circ}$C', 'T = $0^{\circ}$C', 'T = $-10^{\circ}$C', 'T = $-20^{\circ}$C', 'T = $-30^{\circ}$C', 'T = $-40^{\circ}$C', 'Location','southeast')
 
 savefig('fig/fdt_csavrefgm_530mV_tau6_keV.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_530mV_tau6_keV.pdf','ContentType','vector');
@@ -959,6 +959,49 @@ grid on
 
 savefig('fig/fdt_csavrefgm_auto_0011_0111_tau6_DAC.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_auto_0011_0111_tau6_DAC.pdf','ContentType','vector');
+
+
+%% simple line plot TDF CSAVrefGM HRRR = 0011 & HRRR = 0111 [X axis: keV] [-40°C to 30°C, 10°C/step]
+
+f = figure('visible','off');
+
+% CSAVrefGM: auto [HRRR = 0011]
+hold on;
+p1A = plot(X_keV(1:55), T_tab_30A_mean, "Color", 'red')
+p2A = plot(X_keV(1:55), T_tab_20A_mean, "Color", 'red')
+p3A = plot(X_keV(1:55), T_tab_10A_mean, "Color", 'red')
+p4A = plot(X_keV(1:55), T_tab_0A_mean, "Color", 'red')
+p5A = plot(X_keV(1:55), T_tab_m10A_mean,  "Color", 'red')
+p6A = plot(X_keV(1:55), T_tab_m20A_mean, "Color", 'red')
+p7A = plot(X_keV(1:55), T_tab_m30A_mean, "Color", 'red')
+p8A = plot(X_keV(1:55), T_tab_m40A_mean, "Color", 'red')
+
+% CSAVrefGM: auto [HRRR = 0111]
+p1B = plot(X_keV(1:55), T_tab_30C_mean, "Color", 'blue')
+p2B = plot(X_keV(1:55), T_tab_20C_mean, "Color", 'blue')
+p3B = plot(X_keV(1:55), T_tab_10C_mean, "Color", 'blue')
+p4B = plot(X_keV(1:55), T_tab_0C_mean, "Color", 'blue')
+p5B = plot(X_keV(1:55), T_tab_m10C_mean, "Color", 'blue')
+p6B = plot(X_keV(1:55), T_tab_m20C_mean, "Color", 'blue')
+p7B = plot(X_keV(1:55), T_tab_m30C_mean, "Color", 'blue')
+p8B = plot(X_keV(1:55), T_tab_m40C_mean, "Color", 'blue')
+hold off
+
+legend([p1A, p1B], 'CSAVrefGM = auto [HRRR = $(0011)_2$]', 'CSAVrefGM = auto [HRRR = $(0111)_2$]', 'Location','southeast', 'interpreter', 'latex')
+
+box
+%title(['Transfer Function for \tau_{' num2str(tau) '} (-40°C / 30°C range)']);
+xlabel('Incoming energy [MeV]');
+ylabel('Channel\_out [ADC code]');
+xlim([0, 53824]);
+xticks([0:10000:50000])
+xticklabels([0:10:50])
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
+
+savefig('fig/fdt_csavrefgm_auto_0011_0111_tau6_keV.fig')
+exportgraphics(gcf,'pdf/fdt_csavrefgm_auto_0011_0111_tau6_keV.pdf','ContentType','vector');
 
 
 %% simple line plot TDF CSAVrefGM: auto & 530mV [X axis: DAC code] [-40°C to -30°C, 2°C/step] [HRRR = 0011]

@@ -28,7 +28,7 @@ end
 
 % retta a 5uA per indicare valore di riferimento
 plot([1:8], [5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 1, 'Color', 'red')
-text(8.1, 5, '5μA', 'Color', 'red')
+text(8.1, 5, '5μA', 'Color', 'red', 'FontName', 'Computer Modern')
 hold off
 
 
