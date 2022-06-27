@@ -1,4 +1,4 @@
-clear all
+%clear all
 % This script changes all interpreters from tex to latex. 
 list_factory = fieldnames(get(groot,'factory'));
 index_interpreter = find(contains(list_factory,'Interpreter'));

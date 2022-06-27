@@ -76,9 +76,9 @@ plot(x,y_est,'r--','LineWidth',1.5)
 %title({'Gain in X-ray detection region (10-100 keV)', 'CSAVrefGM: 530mV'});
 %title({'Gain in Muon detection region (40-55 MeV)', 'CSAVrefGM: 530mV'});
 
-xlabel('Temperature [°C]');
+xlabel("Temperature [$^{\circ}$C]")
 ylabel('Linear Gain [ADU/keV]');
-legend('Mean gain at temperature x', ['y = ' num2str(c(2)) ' + ' num2str(c(1)) ' * x'], 'Location','southeast')
+legend('Mean gain at temperature x', ['y = ' num2str(c(2)) ' + ' num2str(c(1)) ' $\cdot$ x'], 'Location','southeast')
 
 % CHOOSE PLOT TO SHOW
 %filename = "low_energy_gain_auto_0011";
@@ -152,9 +152,9 @@ plot(x,y_est,'r--','LineWidth',2)
 %title({'Pedestal in X-ray detection region (10-100 keV)', 'CSAVrefGM: 530mV'});
 %title({'Pedestal in Muon detection region (40-55 MeV)', 'CSAVrefGM: 530mV'});
 
-xlabel('Temperature [°C]');
+xlabel("Temperature [$^{\circ}$C]")
 ylabel('Linear Gain [ADU/keV]');
-legend('Mean pedestal at temperature x', ['y = ' num2str(c(2)) ' + ' num2str(c(1)) ' * x'], 'Location','northeast')
+legend('Mean pedestal at temperature x', ['y = ' num2str(c(2)) ' + ' num2str(c(1)) ' $\cdot$ x'], 'Location','northeast')
 
 % CHOOSE PLOT TO SHOW
 %filename = "low_energy_pedestal_auto_0011";

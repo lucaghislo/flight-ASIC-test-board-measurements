@@ -8,7 +8,7 @@ X_temp = [-40 -38 -36 -34 -32 -30 -20 -10 0 10 20 30]
 
 plot(X_temp, IAVDD_auto_0011, '-o')
 %title("IAVDD vs Temperature [CSAVrefGM: auto, HRRR = (0011)_2]");
-xlabel('Temperature [°C]');
+xlabel('Temperature [$^{\circ}$C]');
 ylabel('IAVDD [mA]');
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
@@ -27,7 +27,7 @@ X_temp = [-40 -38 -36 -34 -32 -30 -20 -10 0 10 20 30]
 
 plot(X_temp, IAVDD_auto_0111, '-o')
 %title("IAVDD vs Temperature [CSAVrefGM: auto, HRRR = (0111)_2]");
-xlabel('Temperature [°C]');
+xlabel('Temperature [$^{\circ}$C]');
 ylabel('IAVDD [mA]');
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
@@ -45,7 +45,7 @@ IAVDD_530mV = flip([150.7 152.3 153.8 155.3 156.7 158.0 159.3 160.0 160.3 160.5 
 
 plot(X_temp, IAVDD_530mV, '-o')
 %title("IAVDD vs Temperature (CSAVrefGM: 530mV)");
-xlabel('Temperature [°C]');
+xlabel('Temperature [$^{\circ}$C]');
 ylabel('IAVDD [mA]');
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
@@ -61,12 +61,12 @@ f = figure('visible','off');
 
 plot(X_temp, IAVDD_auto_0011, '-o', X_temp, IAVDD_auto_0111, '-o', X_temp, IAVDD_530mV, '-o')
 %title("IAVDD vs Temperature");
-xlabel('Temperature [°C]');
+xlabel('Temperature [$^{\circ}$C]');
 ylabel('IAVDD [mA]');
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
-legend('CSAVrefGM = auto [HRRR = (0011)_2]', 'CSAVrefGM = auto [HRRR = (0111)_2]', 'CSAVrefGM = 530mV','Location','northeast')
+legend('CSAVrefGM = auto [HRRR = $(0011)_{2}$]', 'CSAVrefGM = auto [HRRR = $(0111)_{2}$]', 'CSAVrefGM = 530mV','Location','northeast')
 
 savefig('fig/IAVDD_temp_CSAVREFGM_auto-530mV.fig')
 exportgraphics(gcf,'pdf/IAVDD_temp_CSAVREFGM_auto-530mV.pdf','ContentType','vector');
