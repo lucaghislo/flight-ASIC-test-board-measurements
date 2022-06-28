@@ -73,16 +73,22 @@ for j = -40:10:30
     % Fit line to data using polyfit
     c = polyfit(thr_mean(:, 1), thr_mean(:, 2)*1000, 1);
 
+    x = thr_mean(:, 1);
+    y = thr_mean(:, 2)*1000;
+    f1 = fitlm(x,y)
+    y_predict = f1.predict(x);
+    Rsquared = f1.Rsquared.Ordinary;
+
     % Display evaluated equation y = p0 + p1*x
-    disp(['TEMP = ' num2str(j) ' °C, y = ' num2str(c(2)) ' + ' num2str(c(1)) ' * x'])
+    disp(['TEMP = ' num2str(j) ' °C, y = ' num2str(c(2)) ' + ' num2str(c(1)) ' * x, R2 = ' num2str(Rsquared)])
 
     % INL/DNL analysis
     %s = inldnl(thr_mean(:, 2),thr_mean(:, 1),[-1 1],'DAC','GenPlotData','on','INLMethod','All','DNLMethod','All')
    
     sum = 0;
     for i = 1:length(thr_mean)-1
-        y = polyval(c, thr_mean(i, 1))
-        fprintf("%f - %f, difference: %f\n", thr_mean(i, 2)*1000, y, (thr_mean(i, 2)*1000-y));
+        y = polyval(c, thr_mean(i, 1));
+        %fprintf("%f - %f, difference: %f\n", thr_mean(i, 2)*1000, y, (thr_mean(i, 2)*1000-y));
         
         DNL(i, global_count) =  (((thr_mean(i+1, 2)*1000) - (thr_mean(i, 2)*1000))/LSB_step) - 1;
         %INL(i, global_count) = nansum(DNL(:, global_count)); %#ok<NANSUM>
@@ -222,8 +228,14 @@ for j = -40:2:-30
     % Fit line to data using polyfit
     c = polyfit(thr_mean(:, 1),thr_mean(:, 2)*1000,1);
 
+    x = thr_mean(:, 1);
+    y = thr_mean(:, 2)*1000;
+    f1 = fitlm(x,y)
+    y_predict = f1.predict(x);
+    Rsquared = f1.Rsquared.Ordinary;
+
     % Display evaluated equation y = p0 + p1*x
-    disp(['TEMP = ' num2str(j) ' °C, y = ' num2str(c(2)) ' + ' num2str(c(1)) ' * x'])
+    disp(['TEMP = ' num2str(j) ' °C, y = ' num2str(c(2)) ' + ' num2str(c(1)) ' * x, R2 = ' num2str(Rsquared)])
 end
 
 box
@@ -300,8 +312,14 @@ for j = 0:7
     % Fit line to data using polyfit
     c = polyfit(thr_mean(:, 1),thr_mean(:, 2)*1000,1);
 
+    x = thr_mean(:, 1);
+    y = thr_mean(:, 2)*1000;
+    f1 = fitlm(x,y)
+    y_predict = f1.predict(x);
+    Rsquared = f1.Rsquared.Ordinary;
+
     % Display evaluated equation y = p0 + p1*x
-    disp(['FTHR = ' num2str(j) ', y = ' num2str(c(2)) ' + ' num2str(c(1)) '*x'])
+    disp(['FTHR = ' num2str(j) ', y = ' num2str(c(2)) ' + ' num2str(c(1)) ' * x, R2 = ' num2str(Rsquared)])
 end
 
 box

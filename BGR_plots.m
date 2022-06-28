@@ -38,7 +38,7 @@ savefig('fig/BGR_current_XBBB.fig')
 exportgraphics(gcf,'pdf/BGR_current_XBBB.pdf','ContentType','vector');
 
 
-%% BGR current vs BBB bits configuration @ 27$^{\circ}$ [vs Simulations]
+%% BGR current vs BBB bits configuration @ 27$^{\circ}$C [vs Simulations]
 
 f = figure('visible','off');
 
@@ -183,7 +183,7 @@ for i=1:8
     xlim([-50 40])
     xticks([-100 -80 -60 -40 -30 -20 -10 0 10 20 30])
     %title(['Reference current vs Temperature'])
-    xlabel("Temperature [$^{\circ}$]")
+    xlabel("Temperature [$^{\circ}$C]")
     ylabel("Reference current [$\mu$A]")
     set(gcf, 'Color', 'w');
     set(gca,'fontname','Computer Modern') 
@@ -247,7 +247,7 @@ xlim([-50 40])
 xticks([ -40 -30 -20 -10 0 10 20 30])
 xticklabels([ -40 -30 -20 -10 0 10 20 30])
 %title('Reference current vs Temperature')
-xlabel("Temperature [$^{\circ}$]")
+xlabel("Temperature [$^{\circ}$C]")
 ylabel("Reference current [$\mu$A]", 'Interpreter','latex')
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
@@ -257,7 +257,7 @@ savefig('fig/BGR_current_Xtemp_all-BBB.fig')
 exportgraphics(gcf,'pdf/BGR_current_Xtemp_all-BBB.pdf','ContentType','vector');
 
 
-%% BGR current vs BBB bits (variating temperature) [-40$^{\circ}$ to -30$^{\circ}$]
+%% BGR current vs BBB bits (variating temperature) [-40$^{\circ}$C to -30$^{\circ}$C]
 
 f = figure('visible','off');
 
@@ -292,7 +292,7 @@ savefig('fig/BGR_current_XBBB_40-30.fig')
 exportgraphics(gcf,'pdf/BGR_current_XBBB_40-30.pdf','ContentType','vector');
 
 
-%% BGR current vs temperature (all BBB bits configurations) [-40$^{\circ}$ to -30$^{\circ}$]
+%% BGR current vs temperature (all BBB bits configurations) [-40$^{\circ}$C to -30$^{\circ}$C]
 
 f = figure('visible','off');
 
@@ -336,7 +336,7 @@ xlim([-42 -28])
 xticks([-40 -38 -36 -34 -32 -30 -28 -26 -24])
 xticklabels([-40 -38 -36 -34 -32 -30])
 %title('Reference current vs Temperature')
-xlabel("Temperature [$^{\circ}$]")
+xlabel("Temperature [$^{\circ}$C]")
 ylabel("Reference current [$\mu$A]")
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
