@@ -919,6 +919,49 @@ savefig('fig/fdt_csavrefgm_auto-530mV_tau6_DAC_0011.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_auto-530mV_tau6_DAC_0011.pdf','ContentType','vector');
 
 
+%% simple line plot TDF CSAVrefGM: auto & 530mV [X axis: keV] [-40°C to 30°C, 10°C/step] [HRRR = 0011]
+
+f = figure('visible','off');
+
+% CSAVrefGM: auto
+hold on;
+p1A = plot(X_keV(1:55), T_tab_30A_mean, "Color", 'red')
+p2A = plot(X_keV(1:55), T_tab_20A_mean, "Color", 'red')
+p3A = plot(X_keV(1:55), T_tab_10A_mean, "Color", 'red')
+p4A = plot(X_keV(1:55), T_tab_0A_mean, "Color", 'red')
+p5A = plot(X_keV(1:55), T_tab_m10A_mean,  "Color", 'red')
+p6A = plot(X_keV(1:55), T_tab_m20A_mean, "Color", 'red')
+p7A = plot(X_keV(1:55), T_tab_m30A_mean, "Color", 'red')
+p8A = plot(X_keV(1:55), T_tab_m40A_mean, "Color", 'red')
+
+% CSAVrefGM: 530mV
+p1B = plot(X_keV(1:55), T_tab_30B_mean, "Color", 'blue')
+p2B = plot(X_keV(1:55), T_tab_20B_mean, "Color", 'blue')
+p3B = plot(X_keV(1:55), T_tab_10B_mean, "Color", 'blue')
+p4B = plot(X_keV(1:55), T_tab_0B_mean, "Color", 'blue')
+p5B = plot(X_keV(1:55), T_tab_m10B_mean, "Color", 'blue')
+p6B = plot(X_keV(1:55), T_tab_m20B_mean, "Color", 'blue')
+p7B = plot(X_keV(1:55), T_tab_m30B_mean, "Color", 'blue')
+p8B = plot(X_keV(1:55), T_tab_m40B_mean, "Color", 'blue')
+hold off
+
+legend([p1A, p1B], 'CSAVrefGM = auto [HRRR = $(0011)_{2}$]', 'CSAVrefGM = 530mV', 'Location','southeast')
+
+box
+%title(['Transfer Function for \tau_{' num2str(tau) '} (-40°C / 30°C range)']);
+xlabel('Incoming energy [MeV]');
+ylabel('Channel\_out [ADC code]');
+xlim([0, 53824]);
+xticks([0:10000:50000])
+xticklabels([0:10:50])
+set(gcf, 'Color', 'w');
+set(gca,'fontname','Computer Modern') 
+grid on
+
+savefig('fig/fdt_csavrefgm_auto-530mV_tau6_keV_0011.fig')
+exportgraphics(gcf,'pdf/fdt_csavrefgm_auto-530mV_tau6_keV_0011.pdf','ContentType','vector');
+
+
 %% simple line plot TDF CSAVrefGM HRRR = 0011 & HRRR = 0111 [X axis: DAC code] [-40°C to 30°C, 10°C/step]
 
 f = figure('visible','off');
