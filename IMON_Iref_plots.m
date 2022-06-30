@@ -155,7 +155,7 @@ plot(X, I_FF, '-*')
 hold off
 
 box
-legend('Measured IMON/4', 'Iref (TT)', 'Iref (SS)', 'Iref (FF)')
+legend('Measured Iref', 'Simulated Iref (TT)', 'Simulated Iref (SS)', 'Simulated Iref (FF)')
 %title('Normalised reference current vs Temperature')
 ylabel('Reference current [$\mu$A]')
 xlabel("Temperature [$^{\circ}$C]")

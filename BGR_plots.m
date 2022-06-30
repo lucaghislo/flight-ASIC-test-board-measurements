@@ -1,6 +1,6 @@
 %% BGR current vs BBB bits (variating temperature)
 
-f = figure('visible','off');
+f = figure('visible','on');
 
 clear; clc;
 % test_board_measurements - 2_BGR.csv
@@ -26,10 +26,10 @@ hold off
 
 %title('Reference current vs Bias setting')
 xticklabels({'000', '001', '010', '011', '100', '101', '110', '111'})
-yticks([3.5:0.5:5.5])
+yticks([3.5:0.25:5.5])
 xlabel("Bias setting")
 ylabel("Reference current [$\mu$A]")
-legend('T = $30^{\circ}$C', 'T = $20^{\circ}$C', 'T = $10^{\circ}$C', 'T = $0^{\circ}$C', 'T = $-10^{\circ}$C', 'T = $-20^{\circ}$C', 'T = $-30^{\circ}$C', 'T = $30^{\circ}$C', 'Location','southeast', 'NumColumns', 2)
+legend('T = $30^{\circ}$C', 'T = $20^{\circ}$C', 'T = $10^{\circ}$C', 'T = $0^{\circ}$C', 'T = $-10^{\circ}$C', 'T = $-20^{\circ}$C', 'T = $-30^{\circ}$C', 'T = $-40^{\circ}$C', 'Location','southeast', 'NumColumns', 2)
 box
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
@@ -40,7 +40,7 @@ exportgraphics(gcf,'pdf/BGR_current_XBBB.pdf','ContentType','vector');
 
 %% BGR current vs BBB bits configuration @ 27$^{\circ}$C [vs Simulations]
 
-f = figure('visible','off');
+f = figure('visible','on');
 
 clear; clc;
 D = readtable('BGR_data/test_board_measurements - 2_BGR_R3-18k.csv', 'VariableNamingRule','preserve'); % measurements data
@@ -80,7 +80,7 @@ exportgraphics(gcf,'pdf/BGR_current_XBBB_27C_sim.pdf','ContentType','vector');
 
 %% BGR current vs temperature (per BBB bits configuration)
 
-f = figure('visible','off');
+f = figure('visible','on');
 
 clear; clc;
 D = readtable('BGR_data/test_board_measurements - 2_BGR_R3-18k.csv', 'VariableNamingRule','preserve');
@@ -108,7 +108,7 @@ bits = ["000", "001", "010", "011", "100", "101", "110", "111"];
 
 % all BBB bits configuration in different plots
 for i=1:8
-    figure('visible','off');
+    figure('visible','on');
 
     plot([-40, 0, 27], [5.012, 5.004, 4.990], '-*', 'LineStyle','--') % TT
     hold on
@@ -144,7 +144,7 @@ end
 
 %% BGR current vs temperature (per BBB bits configuration) [Only TT simulation]
 
-f = figure('visible','off');
+f = figure('visible','on');
 
 clear; clc;
 D = readtable('BGR_data/test_board_measurements - 2_BGR_R3-18k.csv', 'VariableNamingRule','preserve');
@@ -172,7 +172,7 @@ bits = ["000", "001", "010", "011", "100", "101", "110", "111"];
 
 % all BBB bits configuration in different plots
 for i=1:8
-    figure('visible','off');
+    figure('visible','on');
     plot([-40, 0, 27], [5.012, 5.004, 4.990], '-*', 'LineStyle','--') % TT
     hold on
     %plot([-40 -30 -20 -10 0 10 20 30], BGR_tot(i, :), '-o', 'LineStyle','--')
@@ -196,7 +196,7 @@ end
 
 %% BGR current vs temperature (all BBB bits configurations)
 
-f = figure('visible','off');
+f = figure('visible','on');
 
 clear; clc;
 D = readtable('BGR_data/test_board_measurements - 2_BGR_R3-18k.csv', 'VariableNamingRule','preserve');
@@ -243,6 +243,7 @@ plot([-50:10:40], [5 5 5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 0.8, 'Co
 text(32.5, 4.95, '5$\mu$A', 'Color', 'red','FontName','Computer Modern')
 hold off
 
+yticks([3.5:0.25:6])
 xlim([-50 40])
 xticks([ -40 -30 -20 -10 0 10 20 30])
 xticklabels([ -40 -30 -20 -10 0 10 20 30])
@@ -259,7 +260,7 @@ exportgraphics(gcf,'pdf/BGR_current_Xtemp_all-BBB.pdf','ContentType','vector');
 
 %% BGR current vs BBB bits (variating temperature) [-40$^{\circ}$C to -30$^{\circ}$C]
 
-f = figure('visible','off');
+f = figure('visible','on');
 
 clear; clc;
 D = readtable('BGR_data/test_board_measurements - 2_BGR_R3-18k.csv', 'VariableNamingRule','preserve');
@@ -294,7 +295,7 @@ exportgraphics(gcf,'pdf/BGR_current_XBBB_40-30.pdf','ContentType','vector');
 
 %% BGR current vs temperature (all BBB bits configurations) [-40$^{\circ}$C to -30$^{\circ}$C]
 
-f = figure('visible','off');
+f = figure('visible','on');
 
 clear; clc;
 D = readtable('BGR_data/test_board_measurements - 2_BGR_R3-18k.csv', 'VariableNamingRule','preserve');
@@ -333,6 +334,7 @@ text(-29.4, 4.95, '5$\mu$A', 'Color', 'red','FontName','Computer Modern')
 hold off
 box
 xlim([-42 -28])
+yticks([3.5:0.25:5.5])
 xticks([-40 -38 -36 -34 -32 -30 -28 -26 -24])
 xticklabels([-40 -38 -36 -34 -32 -30])
 %title('Reference current vs Temperature')

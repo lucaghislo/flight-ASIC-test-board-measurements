@@ -746,7 +746,7 @@ exportgraphics(gcf,'pdf/errbar_fdt_csavrefgm_530mV_tau6_keV.pdf','ContentType','
 
 %% simple line plot TDF CSAVrefGM: fixed @ 530mV [X axis: keV]
 
-f = figure('visible','off');
+f = figure('visible','on');
 
 box
 hold on
@@ -767,6 +767,8 @@ hold on;
 plot(X_keV(1:55), T_tab_m40B_mean)
 
 %title(['Transfer Function for \tau_{' num2str(tau) '}: CSAVrefGM fixed @ 530mV']);
+ylim([0 2000])
+yticks([0:200:2000])
 xlabel('Incoming energy [MeV]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 53824]);
