@@ -313,15 +313,15 @@ BGR_tot = [BGR_current_m40C,  BGR_current_m38C,  BGR_current_m36C,  BGR_current_
 
 bits = ["000", "001", "010", "011", "100", "101", "110", "111"];
 
-plot([-40, 0, 27], [5.012, 5.004, 4.990], '-*', 'LineStyle', '--', Color=[0 1 0.5]) % TT
+%plot([-40, 0, 27], [5.012, 5.004, 4.990], '-*', 'LineStyle', '--', Color=[0 1 0.5]) % TT
 hold on
-plot([-40, 0, 27], [5.761, 5.757, 5.744], '-*', 'LineStyle', '--', Color=[0.18 0.3 0.33]) % FF
+%plot([-40, 0, 27], [5.761, 5.757, 5.744], '-*', 'LineStyle', '--', Color=[0.18 0.3 0.33]) % FF
 hold on
 %plot([-40, 0, 27], [5.012, 5.004, 4.989], '-*', 'LineStyle', '--') % FS
 hold on
 %plot([-40, 0, 27], [5.012, 5.004, 4.989], '-*', 'LineStyle', '--') % SF
 hold on
-plot([-40, 0, 27], [4.447, 4.432, 4.420], '-*', 'LineStyle', '--') % SS
+%plot([-40, 0, 27], [4.447, 4.432, 4.420], '-*', 'LineStyle', '--') % SS
 
 % all BBB bits configuration in one single plot
 for i=1:8
@@ -341,6 +341,6 @@ ylabel("Reference current [$\mu$A]")
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
-legend('TT (simulated)', 'FF (simulated)', 'SS (simulated)', 'BBB = $(000)_{2}$', 'BBB = $(001)_{2}$', 'BBB = $(010)_{2}$', 'BBB = $(011)_{2}$', 'BBB = $(100)_{2}$', 'BBB = $(101)_{2}]$', 'BBB = $(110)_{2}$', 'BBB = $(111)_{2}$', 'Location','eastoutside')
+legend('BBB = $(000)_{2}$', 'BBB = $(001)_{2}$', 'BBB = $(010)_{2}$', 'BBB = $(011)_{2}$', 'BBB = $(100)_{2}$', 'BBB = $(101)_{2}]$', 'BBB = $(110)_{2}$', 'BBB = $(111)_{2}$', 'Location','eastoutside')
 savefig('fig/BGR_current_Xtemp_all-BBB.fig')
 exportgraphics(gcf,'pdf/BGR_current_Xtemp_all-BBB_40-30.pdf','ContentType','vector');
