@@ -122,7 +122,7 @@ T_tab_m36C = nan(255,55);
 T_tab_m38C = nan(255,55);
 T_tab_m40C = nan(255,55);
 
-tau = 6;
+tau = 4;
 
 % X in DAC code
 X = table2array(T_30A([1:55], 3));
