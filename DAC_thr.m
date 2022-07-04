@@ -63,6 +63,11 @@ for j = -40:10:30
     thr_mean(DAC(255), 1) = DAC(255);
     thr_mean(DAC(255), 2) = sum/3;
 
+    % step analysis
+    delta = max(thr_mean(:, 2)) + abs(min(thr_mean(:, 2)));
+    disp(max(thr_mean(:, 2))*1000)
+    disp((delta/255)*1000)
+
     hold on
     plots(1, abs(j/10)+1) = plot(thr_mean(:, 1), thr_mean(:, 2)*1000);
     %title('Threshold Voltage vs DAC THR Code')
@@ -149,7 +154,7 @@ xlim([0 255])
 ylabel("Integral Non-Linearity (INL) [LSB]")
 xlabel('DAC THR code')
 grid on
-legend('T = -40 °C', 'T = -30 °C', 'T = -20 °C', 'T = -10 °C', 'T = 0 °C', 'T = 10 °C', 'T = 20 °C', 'T = 30 °C', 'Location', 'southwest', 'NumColumns', 2)
+legend('T = -40 °C', 'T = -30 °C', 'T = -20 °C', 'T = -10 °C', 'T = 0 °C', 'T = 10 °C', 'T = 20 °C', 'T = 30 °C', 'Location', 'northeast', 'NumColumns', 2)
 savefig('fig/DAC_INL.fig')
 exportgraphics(gcf,'pdf/DAC_INL.pdf','ContentType','vector');
 
@@ -239,7 +244,7 @@ for j = -40:2:-30
 end
 
 box
-legend('T = -40 °C', 'T = -38 °C', 'T = -36 °C', 'T = -34 °C', 'T = -32 °C', 'T = -30 °C')
+legend('T = -40 °C', 'T = -38 °C', 'T = -36 °C', 'T = -34 °C', 'T = -32 °C', 'T = -30 °C', 'Location', 'northeast')
 savefig('fig/DAC_thr_voltage_40-30.fig')
 exportgraphics(gcf,'pdf/DAC_thr_voltage_40-30.pdf','ContentType','vector');
 
@@ -323,6 +328,6 @@ for j = 0:7
 end
 
 box
-legend(plots, 'FTHR = (000)_2', 'FTHR = (001)_2', 'FTHR = (010)_2', 'FTHR = (011)_2', 'FTHR = (100)_2', 'FTHR = (101)_2', 'FTHR = (110)_2', 'FTHR = (111)_2')
+legend(plots, 'FTHR = $(000)_2$', 'FTHR = $(001)_2$', 'FTHR = $(010)_2$', 'FTHR = $(011)_2$', 'FTHR = $(100)_2$', 'FTHR = $(101)_2$', 'FTHR = $(110)_2$', 'FTHR = $(111)_2$')
 savefig('fig/DAC_thr_voltage_FTHR_-40C.fig')
 exportgraphics(gcf,'pdf/DAC_thr_voltage_FTHR_-40C.pdf','ContentType','vector');
