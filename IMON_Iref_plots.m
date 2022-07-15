@@ -119,7 +119,7 @@ hold off
 box
 legend('Measured IMON/4', 'IMON/4 (TT)', 'IMON/4 (SS)', 'IMON/4 (FF)')
 %title('Normalised reference current vs Temperature')
-ylabel('Reference current [$\mu$A]')
+ylabel('Reference current')
 xlabel("Temperature [$^{\circ}$C]")
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
@@ -157,7 +157,7 @@ hold off
 box
 legend('Measured Iref', 'Simulated Iref (TT)', 'Simulated Iref (SS)', 'Simulated Iref (FF)')
 %title('Normalised reference current vs Temperature')
-ylabel('Reference current [$\mu$A]')
+ylabel('Reference current')
 xlabel("Temperature [$^{\circ}$C]")
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
