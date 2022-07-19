@@ -3,6 +3,7 @@
 f = figure('visible','on');
 
 clear; clc;
+fontsize = 12;
 % test_board_measurements - 2_BGR.csv
 D = readtable('BGR_data/test_board_measurements - 2_BGR_R3-18k.csv', 'VariableNamingRule','preserve'); % measurements data
 
@@ -34,6 +35,11 @@ box
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize; 
+
 savefig('fig/BGR_current_XBBB.fig')
 exportgraphics(gcf,'pdf/BGR_current_XBBB.pdf','ContentType','vector');
 
@@ -43,6 +49,7 @@ exportgraphics(gcf,'pdf/BGR_current_XBBB.pdf','ContentType','vector');
 f = figure('visible','on');
 
 clear; clc;
+fontsize = 12;
 D = readtable('BGR_data/test_board_measurements - 2_BGR_R3-18k.csv', 'VariableNamingRule','preserve'); % measurements data
 SIM = readtable('BGR_data/current_Meas_vs_sim.txt', 'Format','%f %f %f %f %f %f'); % simulations data
 
@@ -73,6 +80,11 @@ ylabel("Reference current [$\mu$A]")
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize; 
+
 legend('Measurement 06/2022 (T = $30^{\circ}$C)', 'Measurement 09/2021 (T = $27^{\circ}$C)', 'SCH FF (T = $27^{\circ}$C)', 'SCH TT (T = $27^{\circ}$C)', 'SCH SS (T = $27^{\circ}$C)', 'Location', 'northwest')
 savefig('fig/BGR_current_XBBB_27C_sim.fig')
 exportgraphics(gcf,'pdf/BGR_current_XBBB_27C_sim.pdf','ContentType','vector');
@@ -83,6 +95,7 @@ exportgraphics(gcf,'pdf/BGR_current_XBBB_27C_sim.pdf','ContentType','vector');
 f = figure('visible','on');
 
 clear; clc;
+fontsize = 12;
 D = readtable('BGR_data/test_board_measurements - 2_BGR_R3-18k.csv', 'VariableNamingRule','preserve');
 
 X = [1:1:8];
@@ -136,6 +149,11 @@ for i=1:8
     set(gcf, 'Color', 'w');
     set(gca,'fontname','Computer Modern') 
     grid on
+
+    ax = gca; 
+    ax.XAxis.FontSize = fontsize; 
+    ax.YAxis.FontSize = fontsize; 
+
     legend('TT (simulated)', 'FF (simulated)', 'SS (simulated)', sprintf('BBB = $(%s)_{2}$', bits(i)), 'Location','northeastoutside')
     savefig(sprintf('fig/BGR_current_Xtemp_%s.fig', bits(i)))
     exportgraphics(gcf,sprintf('pdf/BGR_current_Xtemp_%s.pdf',bits(i)),'ContentType','vector');
@@ -147,6 +165,7 @@ end
 f = figure('visible','on');
 
 clear; clc;
+fontsize = 12;
 D = readtable('BGR_data/test_board_measurements - 2_BGR_R3-18k.csv', 'VariableNamingRule','preserve');
 
 X = [1:1:8];
@@ -188,6 +207,11 @@ for i=1:8
     set(gcf, 'Color', 'w');
     set(gca,'fontname','Computer Modern') 
     grid on
+
+    ax = gca; 
+    ax.XAxis.FontSize = fontsize; 
+    ax.YAxis.FontSize = fontsize; 
+
     legend('TT (simulated)', sprintf('BBB = $(%s)_{2}$', bits(i)), 'Location','eastoutside')
     savefig(sprintf('fig/BGR_current_Xtemp_%s_TT.fig', bits(i)))
     exportgraphics(gcf,sprintf('pdf/BGR_current_Xtemp_%s_TT.pdf',bits(i)),'ContentType','vector');
@@ -199,6 +223,7 @@ end
 f = figure('visible','on');
 
 clear; clc;
+fontsize = 12;
 D = readtable('BGR_data/test_board_measurements - 2_BGR_R3-18k.csv', 'VariableNamingRule','preserve');
 
 X = [1:1:8];
@@ -253,6 +278,11 @@ ylabel("Reference current [$\mu$A]", 'Interpreter','latex')
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize; 
+
 legend('TT (simulated)', 'FF (simulated)', 'SS (simulated)', 'BBB = $(000)_{2}$', 'BBB = $(001)_{2}$', 'BBB = $(010)_{2}$', 'BBB = $(011)_{2}$', 'BBB = $(100)_{2}$', 'BBB = $(101)_{2}$', 'BBB = $(110)_{2}$', 'BBB = $(111)_{2}$', 'Location','eastoutside')
 savefig('fig/BGR_current_Xtemp_all-BBB.fig')
 exportgraphics(gcf,'pdf/BGR_current_Xtemp_all-BBB.pdf','ContentType','vector');
@@ -263,6 +293,7 @@ exportgraphics(gcf,'pdf/BGR_current_Xtemp_all-BBB.pdf','ContentType','vector');
 f = figure('visible','on');
 
 clear; clc;
+fontsize = 12;
 D = readtable('BGR_data/test_board_measurements - 2_BGR_R3-18k.csv', 'VariableNamingRule','preserve');
 
 X = [1:1:8];
@@ -288,6 +319,11 @@ ylabel("Reference current [$\mu$A]")
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize; 
+
 legend('T = $-30°$C', 'T = $-32°$C', 'T = $-34°$C', 'T = $-36°$C', 'T = $-38°$C', 'T = $-40°$C', 'Location', 'southeast')
 savefig('fig/BGR_current_XBBB_40-30.fig')
 exportgraphics(gcf,'pdf/BGR_current_XBBB_40-30.pdf','ContentType','vector');
@@ -298,6 +334,7 @@ exportgraphics(gcf,'pdf/BGR_current_XBBB_40-30.pdf','ContentType','vector');
 f = figure('visible','on');
 
 clear; clc;
+fontsize = 12;
 D = readtable('BGR_data/test_board_measurements - 2_BGR_R3-18k.csv', 'VariableNamingRule','preserve');
 
 X = [1:1:8];
@@ -343,6 +380,11 @@ ylabel("Reference current [$\mu$A]")
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize; 
+
 legend('BBB = $(000)_{2}$', 'BBB = $(001)_{2}$', 'BBB = $(010)_{2}$', 'BBB = $(011)_{2}$', 'BBB = $(100)_{2}$', 'BBB = $(101)_{2}]$', 'BBB = $(110)_{2}$', 'BBB = $(111)_{2}$', 'Location','eastoutside')
 savefig('fig/BGR_current_Xtemp_all-BBB.fig')
 exportgraphics(gcf,'pdf/BGR_current_Xtemp_all-BBB_40-30.pdf','ContentType','vector');

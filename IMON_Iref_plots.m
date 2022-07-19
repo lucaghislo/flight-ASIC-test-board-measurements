@@ -1,6 +1,7 @@
 %% Upload data
 
 clear; clc;
+fontsize = 12;
 D = readtable('BGR_data/test_board_measurements - 2_BGR_R3-18k.csv', 'VariableNamingRule','preserve'); % measurements data
 SIM_IMON_Iref = readtable('BGR_data/IMON_IREF_vs_T_models.txt', 'Format','%f %f %f %f %f %f %f %f %f %f'); % simulations data
 
@@ -43,6 +44,10 @@ set(gca,'fontname','Computer Modern')
 grid on
 legend('00', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', 'Location','southeast','NumColumns',2)
 
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize; 
+
 savefig('fig/BGR_current_11ASIC_XBBB.fig')
 exportgraphics(gcf,'pdf/BGR_current_11ASIC_XBBB.pdf','ContentType','vector');
 
@@ -77,6 +82,10 @@ xticks([4.7:0.1:5.5])
 xticklabels([4.7:0.1:5.5])
 xlabel('Reference current [$\mu$A]')
 ylabel('Entries')
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize; 
+
 %title({'Reference current values distribution', ' for BBB = (101)_2 and BBB = (110)_2'})
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
@@ -125,6 +134,10 @@ set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
 
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize; 
+
 savefig('fig/BGR_current_normal_IMON.fig')
 exportgraphics(gcf,'pdf/BGR_current_normal_IMON.pdf','ContentType','vector');
 
@@ -157,11 +170,15 @@ hold off
 box
 legend('Measured Iref', 'Simulated Iref (TT)', 'Simulated Iref (SS)', 'Simulated Iref (FF)')
 %title('Normalised reference current vs Temperature')
-ylabel('Reference current')
+ylabel('Normalised reference current')
 xlabel("Temperature [$^{\circ}$C]")
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize; 
 
 savefig('fig/BGR_current_normal_Iref.fig')
 exportgraphics(gcf,'pdf/BGR_current_normal_Iref.pdf','ContentType','vector');

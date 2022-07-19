@@ -1,6 +1,7 @@
 %% Transfer function [TransferFunctionXXY.dat]
 
 clear; clc;
+fontsize = 12;
 
 % data acquisition
 T_30A = readtable('MODULE_003/TransferFunction30A.dat', 'VariableNamingRule','preserve');
@@ -371,6 +372,11 @@ xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize;
+
 [leg,att] = legend('T = $30^{\circ}$C', 'T = $20^{\circ}$C', 'T = $10^{\circ}$C', 'T = $0^{\circ}$C', 'T = $-10^{\circ}$C', 'T = $-20^{\circ}$C', 'T = $-30^{\circ}$C', 'T = $-40^{\circ}$C', 'Location','southeast')
 title(leg,'Temperature')
 leg.Title.Visible = 'on';
@@ -409,6 +415,11 @@ xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize;
+
 legend('T = $30^{\circ}$C', 'T = $20^{\circ}$C', 'T = $10^{\circ}$C', 'T = $0^{\circ}$C', 'T = $-10^{\circ}$C', 'T = $-20^{\circ}$C', 'T = $-30^{\circ}$C', 'T = $-40^{\circ}$C', 'Location','southeast')
 
 savefig(sprintf('fig/errbar_fdt_csavrefgm_auto_tau%d_DAC_0111.fig', tau))
@@ -445,6 +456,11 @@ xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize;
+
 legend('T = $30^{\circ}$C', 'T = $20^{\circ}$C', 'T = $10^{\circ}$C', 'T = $0^{\circ}$C', 'T = $-10^{\circ}$C', 'T = $-20^{\circ}$C', 'T = $-30^{\circ}$C', 'T = $-40^{\circ}$C', 'Location','southeast')
 
 savefig('fig/fdt_csavrefgm_auto_tau6_DAC_0011.fig')
@@ -481,6 +497,11 @@ xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize;
+
 legend('T = $30^{\circ}$C', 'T = $20^{\circ}$C', 'T = $10^{\circ}$C', 'T = $0^{\circ}$C', 'T = $-10^{\circ}$C', 'T = $-20^{\circ}$C', 'T = $-30^{\circ}$C', 'T = $-40^{\circ}$C', 'Location','southeast')
 
 savefig('fig/fdt_csavrefgm_auto_tau6_DAC_0111.fig')
@@ -517,6 +538,11 @@ xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize;
+
 legend('T = $30^{\circ}$C', 'T = $20^{\circ}$C', 'T = $10^{\circ}$C', 'T = $0^{\circ}$C', 'T = $-10^{\circ}$C', 'T = $-20^{\circ}$C', 'T = $-30^{\circ}$C', 'T = $-40^{\circ}$C', 'Location','southeast')
 
 savefig('fig/errbar_fdt_csavrefgm_530mV_tau6_DAC.fig')
@@ -553,6 +579,11 @@ xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize;
+
 legend('T = $30^{\circ}$C', 'T = $20^{\circ}$C', 'T = $10^{\circ}$C', 'T = $0^{\circ}$C', 'T = $-10^{\circ}$C', 'T = $-20^{\circ}$C', 'T = $-30^{\circ}$C', 'T = $-40^{\circ}$C', 'Location','southeast')
 
 savefig('fig/fdt_csavrefgm_530mV_tau6_DAC.fig')
@@ -590,6 +621,11 @@ xticklabels([0:10:50])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize;
+
 legend('T = $30^{\circ}$C', 'T = $20^{\circ}$C', 'T = $10^{\circ}$C', 'T = $0^{\circ}$C', 'T = $-10^{\circ}$C', 'T = $-20^{\circ}$C', 'T = $-30^{\circ}$C', 'T = $-40^{\circ}$C', 'Location','southeast')
 
 savefig('fig/errbar_fdt_csavrefgm_auto_tau6_keV_0011.fig')
@@ -627,6 +663,11 @@ xticklabels([0:10:50])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize;
+
 legend('T = $30^{\circ}$C', 'T = $20^{\circ}$C', 'T = $10^{\circ}$C', 'T = $0^{\circ}$C', 'T = $-10^{\circ}$C', 'T = $-20^{\circ}$C', 'T = $-30^{\circ}$C', 'T = $-40^{\circ}$C', 'Location','southeast')
 
 savefig('fig/errbar_fdt_csavrefgm_auto_tau6_keV_0111.fig')
@@ -664,6 +705,11 @@ xticklabels([0:10:50])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize;
+
 legend('T = $30^{\circ}$C', 'T = $20^{\circ}$C', 'T = $10^{\circ}$C', 'T = $0^{\circ}$C', 'T = $-10^{\circ}$C', 'T = $-20^{\circ}$C', 'T = $-30^{\circ}$C', 'T = $-40^{\circ}$C', 'Location','southeast')
 
 savefig('fig/fdt_csavrefgm_auto_tau6_keV_0011.fig')
@@ -701,6 +747,11 @@ xticklabels([0:10:50])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize;
+
 legend('T = $30^{\circ}$C', 'T = $20^{\circ}$C', 'T = $10^{\circ}$C', 'T = $0^{\circ}$C', 'T = $-10^{\circ}$C', 'T = $-20^{\circ}$C', 'T = $-30^{\circ}$C', 'T = $-40^{\circ}$C', 'Location','southeast')
 
 savefig('fig/fdt_csavrefgm_auto_tau6_keV_0111.fig')
@@ -738,6 +789,11 @@ xticklabels([0:10:50])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize;
+
 legend('T = $30^{\circ}$C', 'T = $20^{\circ}$C', 'T = $10^{\circ}$C', 'T = $0^{\circ}$C', 'T = $-10^{\circ}$C', 'T = $-20^{\circ}$C', 'T = $-30^{\circ}$C', 'T = $-40^{\circ}$C', 'Location','southeast')
 
 savefig('fig/errbar_fdt_csavrefgm_530mV_tau6_keV.fig')
@@ -777,6 +833,11 @@ xticklabels([0:10:50])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize;
+
 legend('T = $30^{\circ}$C', 'T = $20^{\circ}$C', 'T = $10^{\circ}$C', 'T = $0^{\circ}$C', 'T = $-10^{\circ}$C', 'T = $-20^{\circ}$C', 'T = $-30^{\circ}$C', 'T = $-40^{\circ}$C', 'Location','southeast')
 
 savefig('fig/fdt_csavrefgm_530mV_tau6_keV.fig')
@@ -809,6 +870,11 @@ xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize;
+
 legend('T = -30°C', 'T = -32°C', 'T = -34°C', 'T = -36°C', 'T = -38°C', 'T = -40°C', 'Location','southeast')
 
 savefig('fig/fdt_csavrefgm_auto_tau6_DAC_40-30_0011.fig')
@@ -841,6 +907,11 @@ xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize;
+
 legend('T = -30°C', 'T = -32°C', 'T = -34°C', 'T = -36°C', 'T = -38°C', 'T = -40°C', 'Location','southeast')
 
 savefig('fig/fdt_csavrefgm_auto_tau6_DAC_40-30_0111.fig')
@@ -873,6 +944,11 @@ xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize;
+
 legend('T = -30°C', 'T = -32°C', 'T = -34°C', 'T = -36°C', 'T = -38°C', 'T = -40°C', 'Location','southeast')
 
 savefig('fig/fdt_csavrefgm_530mV_tau6_DAC_40-30.fig')
@@ -917,6 +993,10 @@ set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
 
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize;
+
 savefig('fig/fdt_csavrefgm_auto-530mV_tau6_DAC_0011.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_auto-530mV_tau6_DAC_0011.pdf','ContentType','vector');
 
@@ -960,6 +1040,10 @@ set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
 
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize;
+
 savefig('fig/fdt_csavrefgm_auto-530mV_tau6_keV_0011.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_auto-530mV_tau6_keV_0011.pdf','ContentType','vector');
 
@@ -1001,6 +1085,10 @@ xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize;
 
 savefig('fig/fdt_csavrefgm_auto_0011_0111_tau6_DAC.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_auto_0011_0111_tau6_DAC.pdf','ContentType','vector');
@@ -1044,6 +1132,10 @@ xticklabels([0:10:50])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize;
 
 savefig('fig/fdt_csavrefgm_auto_0011_0111_tau6_keV.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_auto_0011_0111_tau6_keV.pdf','ContentType','vector');
@@ -1120,6 +1212,10 @@ set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
 
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize;
+
 savefig('fig/fdt_csavrefgm_auto_0011_0111_tau6_DAC_40-30.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_auto_0011_0111_tau6_DAC_40-30.pdf','ContentType','vector');
 
@@ -1150,6 +1246,10 @@ xticklabels([0:10:50])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize;
 
 legend('T = -30°C', 'T = -32°C', 'T = -34°C', 'T = -36°C', 'T = -38°C', 'T = -40°C', 'Location','southeast')
 savefig('fig/fdt_csavrefgm_auto_tau6_keV_40-30_0011.fig')
@@ -1183,6 +1283,10 @@ set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
 
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize;
+
 legend('T = -30°C', 'T = -32°C', 'T = -34°C', 'T = -36°C', 'T = -38°C', 'T = -40°C', 'Location','southeast')
 savefig('fig/fdt_csavrefgm_auto_tau6_keV_40-30_0111.fig')
 exportgraphics(gcf,'pdf/fdt_csavrefgm_auto_tau6_DAC_40-30_0111.pdf','ContentType','vector');
@@ -1214,6 +1318,10 @@ xticklabels([0:10:50])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize;
 
 legend('T = -30°C', 'T = -32°C', 'T = -34°C', 'T = -36°C', 'T = -38°C', 'T = -40°C', 'Location','southeast')
 savefig('fig/fdt_csavrefgm_530mV_tau6_keV_40-30.fig')

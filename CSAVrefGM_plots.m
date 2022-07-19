@@ -1,6 +1,7 @@
 %% CSAVREFGM [mV] during testing vs temperature (H = 0, RRR = 011)
 
 clear; clc;
+fontsize = 12;
 CSAVREFGM_011 = flip([360.5 383.1 405.3 432.1 450.5 473.2 495.1 498.7 503.1 506.8 512.5 517.5]); % measured with H=0 during testing
 CSAVREFGM_sim = [527, 503, 479, 455, 431, 407, 384, 361]; % simulated
 X_temp = [-40 -38 -36 -34 -32 -30 -20 -10 0 10 20 30];
@@ -15,6 +16,11 @@ ylabel('CSAVrefGM [mV]');
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize; 
+
 legend('CSAVrefGM (measured)', 'CSAVrefGM (simulated)', 'Location','northeast');
 savefig('fig/csavrefgm_temperature_0011.fig')
 exportgraphics(gcf,'pdf/csavrefgm_temperature_0011.pdf','ContentType','vector');
@@ -36,6 +42,11 @@ ylabel('CSAVrefGM [mV]');
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize; 
+
 legend('CSAVrefGM (measured)', 'CSAVrefGM (simulated)', 'Location','northeast');
 savefig('fig/csavrefgm_temperature_0111.fig')
 exportgraphics(gcf,'pdf/csavrefgm_temperature_0111.pdf','ContentType','vector');
@@ -60,6 +71,7 @@ exportgraphics(gcf,'pdf/csavrefgm_RRR_011_111.pdf','ContentType','vector')
 %% CSAVREFGM [mV] during testing vs RRR bits configuration @ -40°C (H=0)
 
 clear; clc;
+fontsize = 12;
 CSAVREFGM_H0 = [510.1 512.3 515.1 517.4 519.8 521.8 524.0 525.9]; % measured at -40°C with H=0
 X = [1:1:8];
 
@@ -73,6 +85,11 @@ ylabel('CSAVrefGM [mV]');
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize; 
+
 savefig('fig/csavrefgm_RRR_-40C_H0.fig')
 exportgraphics(gcf,'pdf/csavrefgm_RRR_-40C_H0.pdf','ContentType','vector');
 
@@ -91,6 +108,11 @@ ylabel('CSAVrefGM [mV]');
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize; 
+
 savefig('fig/csavrefgm_RRR_-40C_H1.fig')
 exportgraphics(gcf,'pdf/csavrefgm_RRR_-40C_H1.pdf','ContentType','vector');
 
@@ -107,6 +129,11 @@ ylabel('CSAVrefGM [mV]');
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
+
+ax = gca; 
+ax.XAxis.FontSize = fontsize; 
+ax.YAxis.FontSize = fontsize; 
+
 legend('H = 0', 'H = 1','Location','southeast')
 savefig('fig/csavrefgm_RRR_-40C_H0H1.fig')
 exportgraphics(gcf,'pdf/csavrefgm_RRR_-40C_H0H1.pdf','ContentType','vector');

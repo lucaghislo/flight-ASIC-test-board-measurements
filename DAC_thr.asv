@@ -178,7 +178,6 @@ exportgraphics(gcf,'pdf/DAC_INL.pdf','ContentType','vector');
 %% DAC threshold voltage analysis [FTHR = 011, 2°C/step]
 
 clear; clc;
-fontsize = 12;
 plots = nan(1, 2)
 count = 0;
 
@@ -247,10 +246,6 @@ for j = -40:2:-30
     set(gca,'fontname','Computer Modern') 
     grid on
 
-    ax = gca; 
-    ax.XAxis.FontSize = fontsize; 
-    ax.YAxis.FontSize = fontsize;
-
     % Fit line to data using polyfit
     c = polyfit(thr_mean(:, 1),thr_mean(:, 2)*1000,1);
 
@@ -273,7 +268,6 @@ exportgraphics(gcf,'pdf/DAC_thr_voltage_40-30.pdf','ContentType','vector');
 %% DAC threshold voltage analysis [FTHR span @ -40°C]
 
 clear; clc;
-fontsize = 12;
 plots = nan(1, 2);
 
 f = figure('visible','on');
@@ -335,10 +329,6 @@ for j = 0:7
     set(gcf, 'Color', 'w');
     set(gca,'fontname','Computer Modern') 
     grid on
-
-    ax = gca; 
-    ax.XAxis.FontSize = fontsize; 
-    ax.YAxis.FontSize = fontsize;
 
     % Fit line to data using polyfit
     c = polyfit(thr_mean(:, 1),thr_mean(:, 2)*1000,1);
