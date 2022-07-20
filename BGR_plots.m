@@ -22,7 +22,10 @@ BGR_current_m40C = ((D.("-40C")/BGR_R)/BGR_gain)*1000
 hold on
 plot(X, BGR_current_30C, '-o', X, BGR_current_20C, '-o', X, BGR_current_10C, '-o', X, BGR_current_0C, '-o', X, BGR_current_m10C, '-o', X, BGR_current_m20C, '-o', X, BGR_current_m30C, '-o', X, BGR_current_m40C, '-o')
 plot([1:8], [5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 0.8, 'Color', 'red')
-text(8.1, 5.01, '5$\mu$A', 'Color', 'red','FontName','Computer Modern')
+%outer 5uA
+%text(8.1, 5.01, '5$\mu$A', 'Color', 'red','FontName','Computer Modern')
+%inner 5uA
+text(7.55, 4.92, '5$\mu$A', 'Color', 'red','FontName','Computer Modern')
 hold off
 
 %title('Reference current vs Bias setting')
@@ -68,7 +71,10 @@ BGR_current_27C_meas = SIM_double(:, 6)
 hold on
 plot(X, BGR_current_30C, '-o', X, BGR_current_27C_meas, '-+', X, BGR_current_27C_sim_FF, '-*', X, BGR_current_27C_sim_TT, '-*', X, BGR_current_27C_sim_SS, '-*')
 plot([1:8], [5 5 5 5 5 5 5 5], 'LineStyle','-.', 'LineWidth', 0.8, 'Color', 'red')
-text(8.1, 5.01, '5$\mu$A', 'Color', 'red','FontName','Computer Modern')
+%outer 5uA
+%text(8.1, 5.01, '5$\mu$A', 'Color', 'red','FontName','Computer Modern')
+%inner 5uA
+text(7.55, 4.85, '5$\mu$A', 'Color', 'red','FontName','Computer Modern')
 hold off
 
 box

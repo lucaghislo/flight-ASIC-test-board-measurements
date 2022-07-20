@@ -452,6 +452,7 @@ plot(X(1:55), T_tab_m40A_mean)
 xlabel('CAL\_Voltage [DAC\_inj Code]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 64000]);
+yticks([0:200:2000])
 xticklabels([0:10000:60000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
@@ -494,6 +495,7 @@ xlabel('CAL\_Voltage [DAC\_inj Code]');
 ylabel('Channel\_out [ADC code]');
 xlim([0, 64000]);
 xticklabels([0:10000:60000])
+yticks([0:200:2000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
@@ -702,6 +704,7 @@ ylabel('Channel\_out [ADC code]');
 xlim([0, 53824]);
 xticks([0:10000:50000])
 xticklabels([0:10:50])
+yticks([0:200:2000])
 set(gcf, 'Color', 'w');
 set(gca,'fontname','Computer Modern') 
 grid on
