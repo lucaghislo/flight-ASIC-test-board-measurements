@@ -31,11 +31,6 @@ f = figure('visible','on');
 %x = [-40 -38 -36 -34 -32 -30]; % [2°C step]
 x = [-40 -38 -36 -34 -32 -30 -20 -10 0 10 20 30]; % [all steps]
 
-%y = [0.9286 0.99537 1.0465 1.0977 1.1545 1.2305 1.2572 1.2898]; % HIGH GAIN (low energy) [10°C step, auto, 0011]
-%y = [0.011201 0.011490 0.011774 0.011989 0.012247 0.012501 0.012473 0.011799]; % LOW GAIN (high energy) [10°C step, auto, 0011]
-%y = [0.85593 0.75099 0.63282 0.51795 0.39415 0.29776 0.21870 0.16317]; % HIGH GAIN (low energy) [10°C step, 530mV]
-%y = [0.011237 0.011527 0.011846 0.012168 0.012511 0.012850 0.013139 0.013459]; % LOW GAIN (high energy) [10°C step, 530mV]
-
 % CHOOSE PLOT TO SHOW
 %y = [0.9923 1.0242 1.0349 1.0419 1.0575 1.0720 1.1298 1.1937 1.2586 1.2995 1.3686 1.4094] % HIGH GAIN (low energy) [all steps, auto, 0011]
 %y_high = [1.1060 1.1308 1.1244 1.1397 1.4347 1.3421 1.2256 1.3062 1.4121 1.5175 1.6110 1.5160] - y;
@@ -48,9 +43,9 @@ x = [-40 -38 -36 -34 -32 -30 -20 -10 0 10 20 30]; % [all steps]
 %y = [] % HIGH GAIN (low energy) [all steps, auto, 0111]
 %y = [] % LOW GAIN (high energy) [all steps, auto, 0111]
 
-y = [0.9272 0.9066 0.8834 0.8632 0.8388 0.8160 0.6871 0.5558 0.4192 0.3102 0.2244 0.1695]; % HIGH GAIN (low energy) [all steps, 530mv]
-y_high = [0.9991 1.1104 1.1632 1.3786 1.1475 0.9162 0.9185 0.6245 0.4433 0.6427 0.2399 0.1889] - y;
-y_low = [0.7946 0.5730 0.7164 0.5836 0.5710 0.6717 0.5804 0.4883 0.3791 0.2600 0.1961 0.1514] - y;
+%y = [0.9272 0.9066 0.8834 0.8632 0.8388 0.8160 0.6871 0.5558 0.4192 0.3102 0.2244 0.1695]; % HIGH GAIN (low energy) [all steps, 530mv]
+%y_high = [0.9991 1.1104 1.1632 1.3786 1.1475 0.9162 0.9185 0.6245 0.4433 0.6427 0.2399 0.1889] - y;
+%y_low = [0.7946 0.5730 0.7164 0.5836 0.5710 0.6717 0.5804 0.4883 0.3791 0.2600 0.1961 0.1514] - y;
 
 %y = [0.0112 0.0114 0.0115 0.0115 0.0115 0.0116 0.0120 0.0123 0.0126 0.0129 0.0133 0.0136]; % LOW GAIN (high energy) [all steps, 530mv]
 %y_high = [0.0116 0.0118 0.0121 0.0118 0.0120 0.0121 0.0126 0.0129 0.0132 0.0135 0.0137 0.0141] - y;
@@ -87,10 +82,10 @@ legend('Mean gain at temperature x', ['y = ' num2str(round(c(2), 2)) ' + ' num2s
 
 % CHOOSE PLOT TO SHOW
 %filename = "low_energy_gain_auto_0011";
-%filename = "high_energy_gain_auto_0011";
+filename = "high_energy_gain_auto_0011";
 %filename = "low_energy_gain_auto_0111";
 %filename = "high_energy_gain_auto_0111";
-filename = "low_energy_gain_530mV";
+%filename = "low_energy_gain_530mV";
 %filename = "high_energy_gain_530mV";
 
 ax = gca; 
@@ -153,12 +148,6 @@ f = figure('visible','on');
 %x = [-40 -38 -36 -34 -32 -30]; % [2°C step]
 x = [-40 -38 -36 -34 -32 -30 -20 -10 0 10 20 30]; % [all steps]
 
-% pedestal means
-%y = [150.4564 157.9231 164.8835 171.6629 178.3843 186.5613 192.7818 190.9261]; % HIGH GAIN (low energy) [10°C step, auto, 0011] 
-%y = [1448.4 1518.7 1589.9 1659.7 1728.9 1796.5 1862.5 1913.3]; % LOW GAIN (high energy) [10°C step, auto, 0011] 
-%y = [145.7534 142.4282 137.1384 131.2691 124.3402 119.8640 117.3576 117.1489]; % HIGH GAIN (low energy) [10°C step, 530mV] 
-%y = [1404.5 1384.5 1361.7 1341.0 1310.3 1285.1 1262.8 1248.1]; % LOW GAIN (high energy) [10°C step, 530mV] 
-
 % CHOOSE PLOT TO SHOW
 %y = [154.3903 157.3448 158.9579 160.2252 161.7474 162.3305 169.5153 176.6666 183.4157 191.2847 197.8273 196.9305]; % HIGH GAIN (low energy) [all steps, auto, 0011]
 %y_high = [257.9844 262.9563 266.0441 268.3769 272.4072 272.3756 286.0688 300.0072 312.3553 326.6081 338.0531 342.6831] - y;
@@ -176,8 +165,8 @@ x = [-40 -38 -36 -34 -32 -30 -20 -10 0 10 20 30]; % [all steps]
 %y_low = [104.3897 106.2613 106.1469 105.2216 106.0297 105.3700 105.4322 105.3769 104.8094 105.3951 106.9038 109.2009] - y;
 
 y = [1416.8 1417.9 1413.2 1409.1 1405.9 1396.8 1373.8 1352.2 1321.8 1296.9 1274.4 1259.1]; % LOW GAIN (high energy) [all steps, 530mV]
-y_high = [];
-y_low = [];
+y_high = [1491.4 1495.5 1489.5 1486.0 1482.8 1473.8 1453.4 1433.6 1405.3 1382.7 1362.5 1349.5] - y;
+y_low = [1340.3 1340.6 1335.2 1331.4 1327.7 1317.9 1292.5 1268.6 1235.9 1208.8 1184.2 1168.8] - y;
 
 %plot(x,y, '-o')
 errorbar(x, y, y_low, y_high, '-o', 'LineWidth',1)
@@ -213,8 +202,8 @@ legend('Mean pedestal at temperature x', ['y = ' num2str(round(c(2), 2)) ' + ' n
 %filename = "high_energy_pedestal_auto_0011";
 %filename = "low_energy_pedestal_auto_0111";
 %filename = "high_energy_pedestal_auto_0111";
-filename = "low_energy_pedestal_530mV";
-%filename = "high_energy_pedestal_530mV";
+%filename = "low_energy_pedestal_530mV";
+filename = "high_energy_pedestal_530mV";
 
 ax = gca; 
 ax.XAxis.FontSize = fontsize; 
