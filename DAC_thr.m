@@ -1,6 +1,6 @@
 %% DAC threshold voltage analysis [FTHR = 011, 10°C/step]
 
-f = figure('visible','off');
+f = figure('visible','on');
 
 clear; clc;
 fontsize = 12;
@@ -113,7 +113,7 @@ ax = gca;
 ax.XAxis.FontSize = fontsize; 
 ax.YAxis.FontSize = fontsize;
 
-legend('T = -40 °C', 'T = -30 °C', 'T = -20 °C', 'T = -10 °C', 'T = 0 °C', 'T = 10 °C', 'T = 20 °C', 'T = 30 °C')
+legend('T = $-40^{ \circ}$C', 'T = $-30^{ \circ}$C', 'T = $-20^{ \circ}$C', 'T = $-10^{ \circ}$C', 'T = $0^{ \circ}$C', 'T = $10^{ \circ}$C', 'T = $20^{ \circ}$C', 'T = $30^{ \circ}$C')
 savefig('fig/DAC_thr_voltage_TEMP.fig')
 exportgraphics(gcf,'pdf/DAC_thr_voltage_TEMP.pdf','ContentType','vector');
 
@@ -182,7 +182,7 @@ fontsize = 12;
 plots = nan(1, 2)
 count = 0;
 
-f = figure('visible','off');
+f = figure('visible','on');
 
 % linear regression for each curve
 disp("LINEAR REGRESSION MODEL: y = a + b * x")
@@ -265,7 +265,7 @@ for j = -40:2:-30
 end
 
 box
-legend('T = -40 °C', 'T = -38 °C', 'T = -36 °C', 'T = -34 °C', 'T = -32 °C', 'T = -30 °C', 'Location', 'northeast')
+legend('T =$-40^{\circ}$C', 'T = $-38^{\circ}$C', 'T = $-36^{\circ}$C', 'T = $-34^{\circ}$C', 'T = $-32^{\circ}$C', 'T = $-30^{\circ}$C', 'Location', 'northeast')
 savefig('fig/DAC_thr_voltage_40-30.fig')
 exportgraphics(gcf,'pdf/DAC_thr_voltage_40-30.pdf','ContentType','vector');
 

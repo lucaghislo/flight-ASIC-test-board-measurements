@@ -33,7 +33,7 @@ CSAVREFGM_sim = [527, 503, 479, 455, 431, 407, 384, 361]; % simulated
 X_temp = [-40 -38 -36 -34 -32 -30 -20 -10 0 10 20 30];
 X_sim = [-40 -30 -20 -10 0 10 20 30];
 
-f = figure('visible','off');
+f = figure('visible','on');
 
 plot(X_temp, CSAVREFGM_111, '-o', X_sim, CSAVREFGM_sim, '-*')
 %title("CSAVrefGM vs Temperature (H = 0, RRR = 111)");

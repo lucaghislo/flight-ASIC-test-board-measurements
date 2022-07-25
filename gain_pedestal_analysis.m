@@ -29,16 +29,16 @@ f = figure('visible','on');
 % Create and Plot Raw Data
 %x = [-40, -30, -20, -10, 0, 10, 20, 30]; % [10°C step]
 %x = [-40 -38 -36 -34 -32 -30]; % [2°C step]
-x = [-40 -38 -36 -34 -32 -30 -20 -10 0 10]; % [all steps]
+x = [-40 -38 -36 -34 -32 -30 -20 -10 0 10 20 30]; % [all steps]
 
 % CHOOSE PLOT TO SHOW
-%y = [0.9923 1.0242 1.0349 1.0419 1.0575 1.0720 1.1298 1.1937 1.2586 1.2995 1.3686 1.4094] % HIGH GAIN (low energy) [all steps, auto, 0011]
-%y_high = [1.1060 1.1308 1.1244 1.1397 1.4347 1.3421 1.2256 1.3062 1.4121 1.5175 1.6110 1.5160] - y;
-%y_low = [0.7859 0.8618 0.6881 0.8543 0.8179 0.8900 0.9611 1.0264 1.1174 1.0148 1.0356 1.2598] - y;
+y = [0.9923 1.0242 1.0349 1.0419 1.0575 1.0720 1.1298 1.1937 1.2586 1.2995 1.3686 1.4094] % HIGH GAIN (low energy) [all steps, auto, 0011]
+y_high = [1.1060 1.1308 1.1244 1.1397 1.4347 1.3421 1.2256 1.3062 1.4121 1.5175 1.6110 1.5160] - y;
+y_low = [0.7859 0.8618 0.6881 0.8543 0.8179 0.8900 0.9611 1.0264 1.1174 1.0148 1.0356 1.2598] - y;
 
-y = [0.0113 0.0114 0.0114 0.0114 0.0116 0.0116 0.0118 0.0120 0.0123 0.0125]; % LOW GAIN (high energy) [all steps, auto, 0011] %0.0124 0.0111
-y_high = [0.0116 0.0117 0.0117 0.0118 0.0123 0.0121 0.0121 0.0125 0.0130 0.0131] - y; %0.0136 0.0136
-y_low = [0.0110 0.0110 0.0110 0.0111 0.0111 0.0111 0.0115 0.0116 0.0117 0.0120] - y; %0.0107 0.0070
+%y = [0.0113 0.0114 0.0114 0.0114 0.0116 0.0116 0.0118 0.0120 0.0123 0.0125]; % LOW GAIN (high energy) [all steps, auto, 0011] %0.0124 0.0111
+%y_high = [0.0116 0.0117 0.0117 0.0118 0.0123 0.0121 0.0121 0.0125 0.0130 0.0131] - y; %0.0136 0.0136
+%y_low = [0.0110 0.0110 0.0110 0.0111 0.0111 0.0111 0.0115 0.0116 0.0117 0.0120] - y; %0.0107 0.0070
 
 %y = [] % HIGH GAIN (low energy) [all steps, auto, 0111]
 %y = [] % LOW GAIN (high energy) [all steps, auto, 0111]
@@ -52,15 +52,15 @@ y_low = [0.0110 0.0110 0.0110 0.0111 0.0111 0.0111 0.0115 0.0116 0.0117 0.0120] 
 %y_low = [0.0107 0.0107 0.0109 0.0112 0.0111 0.0112 0.0115 0.0118 0.0121 0.0123 0.0129 0.0129] - y;
 
 %plot(x,y, '-o')
-errorbar(x, y*1000, y_low*1000, y_high*1000, '-o', 'LineWidth',1)
+errorbar(x, y, y_low, y_high, '-o', 'LineWidth',1)
 hold on
-plot(20, 0.0124*1000, '-o', 'LineWidth',1, 'Color',[0.5 0.5 0.5])
+plot(20, 0.0124, '-o', 'LineWidth',1, 'Color',[0.5 0.5 0.5])
 hold on
-plot(30, 0.0111*1000, '-o', 'LineWidth',1, 'Color',[0.5 0.5 0.5])
+plot(30, 0.0111, '-o', 'LineWidth',1, 'Color',[0.5 0.5 0.5])
 
 % Fit line to data using polyfit
-c = polyfit(x,y*1000,1);
-mdl = fitlm(x,y*1000)
+c = polyfit(x,y,1);
+mdl = fitlm(x,y)
 
 % Display evaluated equation y = p0 + p1*x
 disp(['Equation is y = ' num2str(c(2)) ' + ' num2str(c(1)) '*x, R = ' num2str(corrcoef(y))])
@@ -81,12 +81,12 @@ plot([x 20 30],y_est,'r--','LineWidth',1)
 %title({'Gain in Muon detection region (40-55 MeV)', 'CSAVrefGM: 530mV'});
 
 xlabel("Temperature [$^{\circ}$C]")
-ylabel('Linear Gain [ADU/MeV]'); % change to keV
-legend('Mean gain at temperature x',['y = ' num2str(round(c(2), 2)) ' + ' num2str(round(c(1), 4)) ' $\cdot$ x ($R^{2} = $ ' num2str(round(mdl.Rsquared.Ordinary, 3)) ')'],'Location','northwest')
+ylabel('Linear Gain [ADU/keV]'); % change to keV
+legend('Mean gain at temperature x','','',['y = ' num2str(round(c(2), 2)) ' + ' num2str(round(c(1), 3)) ' $\cdot$ x ($R^{2} = $ ' num2str(round(mdl.Rsquared.Ordinary, 3)) ')'],'Location','northwest')
 
 % CHOOSE PLOT TO SHOW
-%filename = "low_energy_gain_auto_0011";
-filename = "high_energy_gain_auto_0011";
+filename = "low_energy_gain_auto_0011";
+%filename = "high_energy_gain_auto_0011";
 %filename = "low_energy_gain_auto_0111";
 %filename = "high_energy_gain_auto_0111";
 %filename = "low_energy_gain_530mV";
